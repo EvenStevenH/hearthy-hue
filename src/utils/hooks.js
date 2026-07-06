@@ -13,10 +13,16 @@ export function useFetch(url) {
 				setLoading(true); // show loading before fetching
 				setError(null); // clear any previous errors
 
-				const response = await fetch(url);
-				if (!response.ok) throw new Error("Unable to retrieve data.");
-
-				const data = await response.json();
+				let data;
+				if (url.endsWith(".js")) {
+					data = await import(/* @vite-ignore */ url);
+				} else {
+					const response = await fetch(url);
+					if (!response.ok) {
+						throw new Error("Unable to retrieve data.");
+					}
+					data = await response.json();
+				}
 				setData(data);
 			} catch (error) {
 				setError(error.message);
