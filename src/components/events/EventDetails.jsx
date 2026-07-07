@@ -3,12 +3,11 @@ import { useEvents } from "../../utils/EventsContext.jsx";
 import { formatDate, formatTimeRange, formatPrice } from "../../utils/eventUtils.js";
 import { Link } from "react-router";
 
-export default function EventDetails({data}) {
+export default function EventDetails({ data }) {
 	const { eventId } = useParams();
 	const { addEvent, removeEvent, isEvent } = useEvents();
-
-	const savedEvent = isEvent(eventId);
 	const event = data.events.find((event) => String(event.id) === eventId);
+	const isSavedEvent = isEvent(event.id);
 
 	return (
 		<>
@@ -36,7 +35,6 @@ export default function EventDetails({data}) {
 
 					<div>
 						<p className="notes">{event.notes}</p>
-						{event.websiteURL && <p>{event.websiteURL}</p>}
 						<p className="price">{formatPrice(event.price)}</p>
 					</div>
 
@@ -48,15 +46,18 @@ export default function EventDetails({data}) {
 					</div>
 
 					<button
-						onClick={() => (savedEvent ? removeEvent(eventId) : addEvent(eventId))}
+						onClick={() => (isSavedEvent ? removeEvent(event.id) : addEvent(event.id))}
 						className="eventBtn"
 					>
-						{savedEvent ? "Remove from Events" : "Add to Events"}
+						{isSavedEvent ? "Remove from Events" : "Add to Events"}
 					</button>
 
-					<button className="backBtn">
-						<Link to={`/events`}>Back</Link>
-					</button>
+					<Link
+						to={`/events`}
+						className="button"
+					>
+						Back
+					</Link>
 				</div>
 			) : (
 				<Navigate to="/events" />

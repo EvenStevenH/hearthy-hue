@@ -39,15 +39,19 @@ export function useFetch(url) {
 
 export function useLocalStorage(key, initialValue) {
 	const [value, setValue] = useState(() => {
-		const stored = localStorage.getItem(key);
-		return stored
-			? JSON.parse(stored) // use existing localStorage data
-			: initialValue; // use default if nothing was stored
+		try {
+			const stored = localStorage.getItem(key);
+			return stored
+				? JSON.parse(stored) // existing data
+				: initialValue; // default if nothing found
+		} catch {
+			return initialValue;
+		}
 	});
 
 	useEffect(() => {
 		localStorage.setItem(key, JSON.stringify(value));
-	}, [key, value]); // run whenever key/value changes
+	}, [key, value]);
 
 	return [value, setValue];
 }

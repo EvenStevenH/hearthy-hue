@@ -30,7 +30,6 @@ export default function EventCard({ event }) {
 
 			<div>
 				<p className="notes">{event.notes}</p>
-				{event.websiteURL && <p>{event.websiteURL}</p>}
 				<p className="price">{formatPrice(event.price)}</p>
 			</div>
 
