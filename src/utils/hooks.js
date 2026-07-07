@@ -26,11 +26,11 @@ export function useFetch(url) {
 				setData(data);
 			} catch (error) {
 				setError(error.message);
+				console.error(error);
 			} finally {
 				setLoading(false); // hide loading when done
 			}
 		}
-
 		fetchData();
 	}, [url]);
 
