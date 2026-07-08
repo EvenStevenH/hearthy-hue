@@ -1,13 +1,13 @@
 import EventCard from "../components/events/EventCard";
 
-export default function EventsPage({ data }) {
+export default function EventsPage({ eventsData }) {
 	return (
 		<div>
 			<h1>Events</h1>
 
-			{data.events.length ? (
+			{eventsData.events.length ? (
 				<div className="grid">
-					{data.events.map((event) => (
+					{eventsData.events.map((event) => (
 						<EventCard
 							event={event}
 							key={event.id}

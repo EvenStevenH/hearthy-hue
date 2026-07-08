@@ -1,8 +1,9 @@
+import Randomizer from "../components/dashboard/Randomizer";
 import EventCard from "../components/events/EventCard";
 import { useEvents } from "./../utils/EventsContext";
 import { Link } from "react-router";
 
-export default function Dashboard({ data }) {
+export default function Dashboard({ eventsData, ideasData }) {
 	const { savedEvents, removeEvent } = useEvents();
 
 	return (
@@ -14,7 +15,7 @@ export default function Dashboard({ data }) {
 
 				{savedEvents.length ? (
 					<div className="grid">
-						{data.events
+						{eventsData.events
 							.filter((event) => savedEvents.includes(event.id))
 							.map((event) => (
 								<EventCard
@@ -30,6 +31,8 @@ export default function Dashboard({ data }) {
 					</p>
 				)}
 			</div>
+
+			<Randomizer ideas={ideasData} />
 		</>
 	);
 }

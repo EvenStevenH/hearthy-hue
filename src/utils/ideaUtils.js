@@ -32,7 +32,7 @@ export function getRandomHSL(harmony = null, hue = null) {
 	}
 
 	const harmonies = {
-		"monochromatic": () => [0, 10, -10, randomize(10, -10)],
+		"monochromatic": () => [0, 5, -5, randomize(5, -5)],
 		"complementary": () => [0, randomize(10, -10), 180, randomize(190, 170)],
 		"split": () => [0, 150, 210, randomize(210, 150)],
 		"triadic": () => [0, 120, 240, randomize(10, -10)],

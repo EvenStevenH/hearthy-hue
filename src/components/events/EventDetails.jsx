@@ -3,10 +3,10 @@ import { useEvents } from "../../utils/EventsContext.jsx";
 import { formatDate, formatTimeRange, formatPrice } from "../../utils/eventUtils.js";
 import { Link } from "react-router";
 
-export default function EventDetails({ data }) {
+export default function EventDetails({ eventsData }) {
 	const { eventId } = useParams();
 	const { addEvent, removeEvent, isEvent } = useEvents();
-	const event = data.events.find((event) => String(event.id) === eventId);
+	const event = eventsData.events.find((event) => String(event.id) === eventId);
 	const isSavedEvent = isEvent(event.id);
 
 	return (

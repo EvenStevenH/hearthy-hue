@@ -15,9 +15,18 @@ import "./styles/App.css";
 
 export default function App() {
 	const [isLoggedIn, setIsLoggedIn] = useLocalStorage("isLoggedIn", false);
-	const { data, loading, error } = useFetch("./../data/events.js");
-	if (loading) return <Spinner />;
-	if (error) return <ErrorMessage message={error} />;
+	const eventsData = useFetch("./../data/events.js");
+	const ideasData = useFetch("./../data/ideas.js");
+
+	if (eventsData.loading || ideasData.loading) return <Spinner />;
+	if (eventsData.error || ideasData.error) {
+		return (
+			<>
+				{eventsData.error && <ErrorMessage message={eventsData.error} />}
+				{ideasData.error && <ErrorMessage message={ideasData.error} />}
+			</>
+		);
+	}
 
 	return (
 		<>
@@ -29,15 +38,20 @@ export default function App() {
 						<Routes>
 							<Route
 								path="/dashboard"
-								element={<Dashboard data={data} />}
+								element={
+									<Dashboard
+										eventsData={eventsData.data}
+										ideasData={ideasData.data}
+									/>
+								}
 							/>
 							<Route
 								path="/events"
-								element={<EventsPage data={data} />}
+								element={<EventsPage eventsData={eventsData.data} />}
 							/>
 							<Route
 								path="/events/:eventId"
-								element={<EventDetails data={data} />}
+								element={<EventDetails eventsData={eventsData.data} />}
 							/>
 							<Route
 								path="/user"
