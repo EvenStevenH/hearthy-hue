@@ -9,8 +9,8 @@ export default function EventCard({ event }) {
 	return (
 		<div className="card">
 			<img
-				src={event.imgURL}
-				alt={event.imgAlt}
+				src={event.img.url}
+				alt={event.img.alt}
 			/>
 
 			<div>

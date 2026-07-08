@@ -2,9 +2,15 @@ import Randomizer from "../components/dashboard/Randomizer";
 import EventCard from "../components/events/EventCard";
 import { useEvents } from "./../utils/EventsContext";
 import { Link } from "react-router";
+import { useFetch } from "../utils/hooks";
+import ErrorMessage from "../components/ErrorMessage";
+import Spinner from "../components/Spinner";
 
-export default function Dashboard({ eventsData, ideasData }) {
+export default function Dashboard({ eventsData }) {
 	const { savedEvents, removeEvent } = useEvents();
+	const { data, loading, error } = useFetch("./../data/ideas.js");
+	if (loading) return <Spinner />;
+	if (error) return <ErrorMessage message={error} />;
 
 	return (
 		<>
@@ -15,7 +21,7 @@ export default function Dashboard({ eventsData, ideasData }) {
 
 				{savedEvents.length ? (
 					<div className="grid">
-						{eventsData.events
+						{eventsData.data.events
 							.filter((event) => savedEvents.includes(event.id))
 							.map((event) => (
 								<EventCard
@@ -32,7 +38,7 @@ export default function Dashboard({ eventsData, ideasData }) {
 				)}
 			</div>
 
-			<Randomizer ideas={ideasData} />
+			<Randomizer ideas={data} />
 		</>
 	);
 }

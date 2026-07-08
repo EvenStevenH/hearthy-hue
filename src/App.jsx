@@ -6,8 +6,6 @@ import Dashboard from "./pages/Dashboard.jsx";
 import UserPage from "./pages/UserPage.jsx";
 import EventsPage from "./pages/EventsPage.jsx";
 import EventDetails from "./components/events/EventDetails.jsx";
-import Spinner from "./components/Spinner.jsx";
-import ErrorMessage from "./components/ErrorMessage.jsx";
 import { EventsProvider } from "./utils/EventsContext.jsx";
 import { Routes, Route, Navigate } from "react-router";
 import { useFetch, useLocalStorage } from "./utils/hooks";
@@ -16,17 +14,6 @@ import "./styles/App.css";
 export default function App() {
 	const [isLoggedIn, setIsLoggedIn] = useLocalStorage("isLoggedIn", false);
 	const eventsData = useFetch("./../data/events.js");
-	const ideasData = useFetch("./../data/ideas.js");
-
-	if (eventsData.loading || ideasData.loading) return <Spinner />;
-	if (eventsData.error || ideasData.error) {
-		return (
-			<>
-				{eventsData.error && <ErrorMessage message={eventsData.error} />}
-				{ideasData.error && <ErrorMessage message={ideasData.error} />}
-			</>
-		);
-	}
 
 	return (
 		<>
@@ -34,24 +21,20 @@ export default function App() {
 				<>
 					<Header />
 					<Nav setIsLoggedIn={setIsLoggedIn} />
+
 					<EventsProvider>
 						<Routes>
 							<Route
 								path="/dashboard"
-								element={
-									<Dashboard
-										eventsData={eventsData.data}
-										ideasData={ideasData.data}
-									/>
-								}
+								element={<Dashboard eventsData={eventsData} />}
 							/>
 							<Route
 								path="/events"
-								element={<EventsPage eventsData={eventsData.data} />}
+								element={<EventsPage eventsData={eventsData} />}
 							/>
 							<Route
 								path="/events/:eventId"
-								element={<EventDetails eventsData={eventsData.data} />}
+								element={<EventDetails eventsData={eventsData} />}
 							/>
 							<Route
 								path="/user"
