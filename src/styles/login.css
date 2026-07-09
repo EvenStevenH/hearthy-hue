@@ -39,9 +39,17 @@
 	padding: 3rem;
 }
 
-.loginPanel h1 {
-	font-size: 1.5em;
+.loginTop {
 	margin-bottom: 1.5em;
+	text-align: center;
+}
+
+.loginTop h1 {
+	margin-bottom: 0;
+}
+
+.loginTop p {
+	color: var(--text3);
 }
 
 .loginPanel a {
