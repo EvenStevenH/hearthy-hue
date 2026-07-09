@@ -38,7 +38,7 @@ export default function Login({ setIsLoggedIn }) {
 	}
 
 	return (
-		<>
+		<main>
 			<Logo />
 
 			<div>
@@ -51,7 +51,7 @@ export default function Login({ setIsLoggedIn }) {
 						name="email"
 						id="email"
 						onChange={(e) => setEmail(e.target.value)}
-						placeholder="steven@example.com"
+						placeholder="steven@email.com"
 						value={email}
 						required
 					/>
@@ -88,6 +88,6 @@ export default function Login({ setIsLoggedIn }) {
 
 				{loginMsg && <div className="loginMsg">{loginMsg}</div>}
 			</div>
-		</>
+		</main>
 	);
 }

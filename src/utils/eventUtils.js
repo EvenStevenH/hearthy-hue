@@ -9,11 +9,11 @@ export function formatTimeRange(startDate, endDate) {
 	return `${startTime} – ${endTime}`;
 }
 
-export function formatDate(startDate) {
+export function formatDate(startDate, weekday, month) {
 	const options = {
-		weekday: "long",
+		weekday: weekday || "long",
 		year: "numeric",
-		month: "long",
+		month: month || "long",
 		day: "numeric",
 	};
 	return new Date(startDate).toLocaleDateString("en-US", options);

@@ -9,7 +9,6 @@ import EventDetails from "./components/events/EventDetails.jsx";
 import { EventsProvider } from "./utils/EventsContext.jsx";
 import { Routes, Route, Navigate } from "react-router";
 import { useFetch, useLocalStorage } from "./utils/hooks";
-import "./styles/App.css";
 
 export default function App() {
 	const [isLoggedIn, setIsLoggedIn] = useLocalStorage("isLoggedIn", false);
@@ -22,31 +21,34 @@ export default function App() {
 					<Header />
 					<Nav setIsLoggedIn={setIsLoggedIn} />
 
-					<EventsProvider>
-						<Routes>
-							<Route
-								path="/dashboard"
-								element={<Dashboard eventsData={eventsData} />}
-							/>
-							<Route
-								path="/events"
-								element={<EventsPage eventsData={eventsData} />}
-							/>
-							<Route
-								path="/events/:eventId"
-								element={<EventDetails eventsData={eventsData} />}
-							/>
-							<Route
-								path="/user"
-								element={<UserPage />}
-							/>
-							<Route
-								path="*"
-								element={<Navigate to={isLoggedIn ? "/dashboard" : "/login"} />}
-							/>
-						</Routes>
-					</EventsProvider>
-					<Footer />
+					<div className="content">
+						<EventsProvider>
+							<Routes>
+								<Route
+									path="/dashboard"
+									element={<Dashboard eventsData={eventsData} />}
+								/>
+								<Route
+									path="/events"
+									element={<EventsPage eventsData={eventsData} />}
+								/>
+								<Route
+									path="/events/:eventId"
+									element={<EventDetails eventsData={eventsData} />}
+								/>
+								<Route
+									path="/user"
+									element={<UserPage />}
+								/>
+								<Route
+									path="*"
+									element={<Navigate to={isLoggedIn ? "/dashboard" : "/login"} />}
+								/>
+							</Routes>
+						</EventsProvider>
+						
+						<Footer />
+					</div>
 				</>
 			) : (
 				<Routes>

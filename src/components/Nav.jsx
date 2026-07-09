@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router";
+import { Link, NavLink, useNavigate } from "react-router";
 
 export default function Nav({ setIsLoggedIn }) {
 	const navigate = useNavigate();
@@ -9,12 +9,15 @@ export default function Nav({ setIsLoggedIn }) {
 	}
 	return (
 		<nav>
-			<div className="nav-links">
-				<Link to="/dashboard">Dashboard</Link>
-				<Link to="/events">Events</Link>
-				<Link to="/user">Your Profile</Link>
-				<button onClick={handleLogout}>Log Out</button>
-			</div>
+			<NavLink to="/dashboard">Dashboard</NavLink>
+			<NavLink to="/events">Events</NavLink>
+			<NavLink to="/user">Your Profile</NavLink>
+			<Link
+				className="logoutLink"
+				onClick={handleLogout}
+			>
+				Log Out
+			</Link>
 		</nav>
 	);
 }

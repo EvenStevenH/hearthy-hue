@@ -9,7 +9,7 @@ export default function EventsPage({ eventsData }) {
 	if (error) return <ErrorMessage message={error} />;
 
 	return (
-		<div>
+		<main>
 			<h1>Events</h1>
 
 			{data.events.length ? (
@@ -24,6 +24,6 @@ export default function EventsPage({ eventsData }) {
 			) : (
 				<p className="emptyMsg">No events available!</p>
 			)}
-		</div>
+		</main>
 	);
 }

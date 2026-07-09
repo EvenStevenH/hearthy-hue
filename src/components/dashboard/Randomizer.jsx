@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { getRandomIdea, getRandomHSL } from "../../utils/ideaUtils";
-import ColorSwatch from "./ColorSwatch";
 
 export default function Randomizer({ ideas }) {
 	const [idea, setIdea] = useState(getRandomIdea(ideas.subjects)); // random idea on load
@@ -28,10 +27,11 @@ export default function Randomizer({ ideas }) {
 				<p>Your Color Harmony: {colors.harmony}</p>
 				<ul className="randomHarmony">
 					{colors.colors.map((color, index) => (
-						<ColorSwatch
+						<li
 							key={index}
-							color={color}
-						/>
+							classname="colorSwatch"
+							style={{ backgroundColor: color }}
+						></li>
 					))}
 				</ul>
 				<button onClick={getHarmony}>Get a new color harmony!</button>
