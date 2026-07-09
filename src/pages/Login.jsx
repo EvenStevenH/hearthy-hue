@@ -79,6 +79,7 @@ export default function Login({ setIsLoggedIn }) {
 						<button
 							type="submit"
 							onClick={handleLogin}
+							className="loginBtn"
 						>
 							Log In
 						</button>

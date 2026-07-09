@@ -12,8 +12,9 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	/* background-image: url("/src/assets/img/bianca-fazacas-kVtJBTRvWQA-unsplash.jpg"); */
+	background-image: url("/src/assets/img/bianca-fazacas-kVtJBTRvWQA-unsplash.jpg");
 	background-position: 50%;
+	background-size: cover;
 }
 
 .rightPane {
@@ -40,6 +41,7 @@
 
 .loginPanel h1 {
 	font-size: 1.5em;
+	margin-bottom: 1.5em;
 }
 
 .loginPanel a {
@@ -79,6 +81,11 @@
 	display: flex;
 	flex-direction: column;
 	gap: 0.5em;
+}
+
+.loginBtn {
+	padding: 1em 1em;
+	margin-top: 1em;
 }
 
 /* -------------------------------------------------------------------------- */
