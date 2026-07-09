@@ -1,0 +1,87 @@
+.loginPage {
+	display: flex;
+	min-height: 500px;
+	height: 100vh;
+	max-width: 100%;
+	padding: 0;
+}
+
+.leftPane {
+	flex: 1.5;
+	background: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-position: 50%;
+}
+
+.rightPane {
+	background-color: var(--bg2);
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem;
+	color: var(--text2);
+}
+
+.loginPanel {
+	width: 400px;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: var(--solid);
+	border-radius: 1rem;
+	padding: 3rem;
+}
+
+.loginPanel h2 {
+	margin-bottom: 1em;
+}
+
+.loginPanel a {
+	color: var(--bg5);
+}
+
+.loginPanel form {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+}
+
+.loginPanel input {
+	margin-top: 0.2em;
+	width: 100%;
+	padding: 1em;
+	font-family: inherit;
+	font-size: 0.9em;
+	border-radius: 0.5em;
+	border: var(--accent3) solid 1px;
+}
+
+.register {
+	margin-top: 1.5em;
+	text-align: center;
+}
+
+.credentials {
+	margin-top: 0.5em;
+}
+
+.loginMsg {
+	margin-top: 1em;
+	color: var(--text3);
+text-align: center;}
+
+/* -------------------------------------------------------------------------- */
+@media screen and (max-width: 800px) {
+	.leftPane {
+		display: none;
+	}
+
+	.loginPanel {
+		width: auto;
+	}
+}

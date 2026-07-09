@@ -6,12 +6,16 @@
 }
 
 .grid > :nth-child(3n + 2) {
-	margin-top: 4em;
+	margin-top: 6em;
 }
 
 .grid > :nth-child(3n + 3) {
 	margin-top: 2em;
 }
+
+/* .grid > :nth-child(3n + 4) {
+	margin-top: -3em;
+} */
 
 .card {
 	background-color: var(--bg2);
@@ -46,7 +50,7 @@
 	justify-content: space-around;
 }
 
-.card:hover {
+.hover:hover {
 	transform: rotate(1deg);
 	scale: 1.01;
 }
@@ -59,7 +63,7 @@
 	width: 100%;
 	height: auto;
 	object-fit: cover;
-	aspect-ratio: 1 / 0.8;
+	aspect-ratio: 1 / 1;
 	filter: sepia(40%) contrast(80%);
 	border-radius: 0.5em;
 }
@@ -82,7 +86,7 @@
 	letter-spacing: 1px;
 	padding: 0.2em 0.8em;
 	background: var(--accent2);
-	color: var(--bg4);
+	color: var(--text3);
 }
 
 .title {
@@ -90,7 +94,7 @@
 }
 
 .notes {
-	color: var(--accent3);
+	color: var(--text3);
 	font-style: italic;
 }
 
@@ -125,11 +129,16 @@
 	color: var(--text2);
 }
 
-#eventSaveBtn.saved {
+#eventSaveBtn {
 	background-color: var(--accent4);
+}
+
+#eventSaveBtn.saved {
+	background-color: var(--bg5);
 	color: white;
 }
 
+/* -------------------------------------------------------------------------- */
 @media screen and (max-width: 1200px) {
 	.event-detail > .card {
 		flex-direction: column;

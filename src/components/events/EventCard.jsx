@@ -7,7 +7,7 @@ export default function EventCard({ event }) {
 	const isSavedEvent = isEvent(event.id);
 
 	return (
-		<div className="card">
+		<div className="card hover">
 			<img
 				src={event.img.url}
 				alt={event.img.alt}

@@ -12,6 +12,7 @@ export default function Nav({ setIsLoggedIn }) {
 			<NavLink to="/dashboard">Dashboard</NavLink>
 			<NavLink to="/events">Events</NavLink>
 			<NavLink to="/user">Your Profile</NavLink>
+			<NavLink to="/about">About</NavLink>
 			<Link
 				className="logoutLink"
 				onClick={handleLogout}
