@@ -47,7 +47,7 @@ export default function Login({ setIsLoggedIn }) {
 
 			<div className="rightPane">
 				<div className="loginPanel">
-					<h2>Welcome back, traveler!</h2>
+					<h1>Welcome back, traveler!</h1>
 
 					<form onSubmit={handleLogin}>
 						<div>

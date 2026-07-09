@@ -38,7 +38,7 @@ export default function EventDetails({ eventsData }) {
 									</span>
 								))}
 							</div>
-							<h3 className="title">{event.title}</h3>
+							<h1 className="title">{event.title}</h1>
 							<p className="description">{event.description}</p>
 						</div>
 

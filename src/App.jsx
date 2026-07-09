@@ -9,6 +9,7 @@ import EventDetails from "./components/events/EventDetails.jsx";
 import { EventsProvider } from "./utils/EventsContext.jsx";
 import { Routes, Route, Navigate } from "react-router";
 import { useFetch, useLocalStorage } from "./utils/hooks";
+import About from "./pages/About.jsx";
 
 export default function App() {
 	const [isLoggedIn, setIsLoggedIn] = useLocalStorage("isLoggedIn", false);
@@ -39,6 +40,10 @@ export default function App() {
 								<Route
 									path="/user"
 									element={<UserPage />}
+								/>
+								<Route
+									path="/about"
+									element={<About />}
 								/>
 								<Route
 									path="*"

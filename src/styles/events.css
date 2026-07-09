@@ -89,10 +89,6 @@
 	color: var(--text3);
 }
 
-.title {
-	font-size: 1.4em;
-}
-
 .notes {
 	color: var(--text3);
 	font-style: italic;

@@ -25,7 +25,7 @@ export default function EventCard({ event }) {
 							</span>
 						))}
 					</div>
-					<h3 className="title">{event.title}</h3>
+					<h2 className="title">{event.title}</h2>
 				</div>
 
 				<div>
