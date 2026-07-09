@@ -13,53 +13,16 @@
 	margin-top: 2em;
 }
 
-/* .grid > :nth-child(3n + 4) {
-	margin-top: -3em;
-} */
-
-.card {
-	background-color: var(--bg2);
-	border-radius: 1em;
-	padding: 1.6em;
-	color: var(--text2);
-	aspect-ratio: 8.8 / 10.7;
-	transition: all ease 0.4s;
-	border-bottom: 6px solid var(--card-border);
-	display: flex;
-	flex-direction: column;
-	align-items: start;
-}
-
-.event-detail > .card {
-	padding: 3em;
-	flex-direction: row;
-	gap: 1.5em;
-	aspect-ratio: unset;
-	align-items: normal;
-}
-
-.event-detail > .card > * {
-	flex: 1;
-}
-
-.event-detail > .card > .cardDetails {
-	margin: auto;
-	display: flex;
-	gap: 0.5em;
-	flex-direction: column;
-	justify-content: space-around;
-}
-
 .hover:hover {
 	transform: rotate(1deg);
 	scale: 1.01;
 }
 
-.card a {
-	text-decoration: none;
+.card {
+	aspect-ratio: 8.8 / 10.7;
 }
 
-.card img {
+.eventImg {
 	width: 100%;
 	height: auto;
 	object-fit: cover;
@@ -123,6 +86,7 @@
 #backBtn {
 	background: var(--accent3);
 	color: var(--text2);
+	text-decoration: none;
 }
 
 #eventSaveBtn {
@@ -135,12 +99,36 @@
 }
 
 /* -------------------------------------------------------------------------- */
-@media screen and (max-width: 1200px) {
-	.event-detail > .card {
+.event-detail {
+	padding: 3em;
+	flex-direction: row;
+	gap: 1.5em;
+	align-items: normal;
+}
+
+.event-detail > * {
+	flex: 1;
+}
+
+.event-detail > .cardDetails {
+	margin: auto;
+	display: flex;
+	gap: 0.5em;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.event-detail > .cardDetails > .cardBtns {
+	margin-top: 1em;
+}
+
+/* -------------------------------------------------------------------------- */
+@media screen and (max-width: 1000px) {
+	.event-detail {
 		flex-direction: column;
 	}
 
-	.event-detail > .card > .cardDetails {
+	.event-detail > .cardDetails {
 		margin: 0;
 	}
 

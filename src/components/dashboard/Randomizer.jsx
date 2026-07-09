@@ -13,7 +13,7 @@ export default function Randomizer({ ideas }) {
 	};
 
 	return (
-		<div>
+		<section>
 			<h2>Random Ideas</h2>
 
 			<div>
@@ -36,6 +36,6 @@ export default function Randomizer({ ideas }) {
 				</ul>
 				<button onClick={getHarmony}>Get a new color harmony!</button>
 			</div>
-		</div>
+		</section>
 	);
 }

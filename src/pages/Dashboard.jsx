@@ -23,7 +23,7 @@ export default function Dashboard({ eventsData }) {
 		<main>
 			<h1>Dashboard</h1>
 
-			<div className="savedEvents">
+			<section className="savedEvents">
 				<h2>Your Events</h2>
 
 				{savedEvents.length ? (
@@ -43,7 +43,7 @@ export default function Dashboard({ eventsData }) {
 						No events saved. <Link to="/events">Find some here!</Link>
 					</p>
 				)}
-			</div>
+			</section>
 
 			<Randomizer ideas={ideasData.data} />
 		</main>

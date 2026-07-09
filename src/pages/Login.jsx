@@ -46,7 +46,7 @@ export default function Login({ setIsLoggedIn }) {
 			</div>
 
 			<div className="rightPane">
-				<div className="loginPanel">
+				<section className="loginPanel">
 					<h1>Welcome back, traveler!</h1>
 
 					<form onSubmit={handleLogin}>
@@ -96,7 +96,7 @@ export default function Login({ setIsLoggedIn }) {
 					</p>
 
 					{loginMsg && <div className="loginMsg">{loginMsg}</div>}
-				</div>
+				</section>
 			</div>
 		</main>
 	);

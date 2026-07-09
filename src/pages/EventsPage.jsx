@@ -13,14 +13,14 @@ export default function EventsPage({ eventsData }) {
 			<h1>Events</h1>
 
 			{data.events.length ? (
-				<div className="grid">
+				<section className="grid">
 					{data.events.map((event) => (
 						<EventCard
 							event={event}
 							key={event.id}
 						/>
 					))}
-				</div>
+				</section>
 			) : (
 				<p className="emptyMsg">No events available!</p>
 			)}
