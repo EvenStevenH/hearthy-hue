@@ -13,7 +13,7 @@ export default function Randomizer({ ideas }) {
 	};
 
 	return (
-		<section>
+		<section className="container">
 			<h2>Random Ideas</h2>
 
 			<div>
@@ -29,7 +29,7 @@ export default function Randomizer({ ideas }) {
 					{colors.colors.map((color, index) => (
 						<li
 							key={index}
-							classname="colorSwatch"
+							className="colorSwatch"
 							style={{ backgroundColor: color }}
 						></li>
 					))}

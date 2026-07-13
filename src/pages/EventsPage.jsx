@@ -13,7 +13,7 @@ export default function EventsPage({ eventsData }) {
 			<h1>Events</h1>
 
 			{data.events.length ? (
-				<section className="grid">
+				<section className="grid gridEvents">
 					{data.events.map((event) => (
 						<EventCard
 							event={event}

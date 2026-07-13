@@ -27,7 +27,7 @@ export default function Dashboard({ eventsData }) {
 				<h2>Your Events</h2>
 
 				{savedEvents.length ? (
-					<div className="grid">
+					<div className="grid gridDashboard">
 						{eventsData.data.events
 							.filter((event) => savedEvents.includes(event.id))
 							.map((event) => (
@@ -45,7 +45,10 @@ export default function Dashboard({ eventsData }) {
 				)}
 			</section>
 
-			<Randomizer ideas={ideasData.data} />
+			<section className="dashboardSection">
+				<Randomizer ideas={ideasData.data} />
+				<Randomizer ideas={ideasData.data} />
+			</section>
 		</main>
 	);
 }

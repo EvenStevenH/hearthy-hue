@@ -5,12 +5,20 @@
 	grid-auto-flow: dense;
 }
 
-.grid > :nth-child(3n + 2) {
+.gridEvents {
+	margin-bottom: 6em;
+}
+
+.gridEvents > :nth-child(3n + 2) {
 	top: 6em;
 }
 
-.grid > :nth-child(3n + 3) {
+.gridEvents > :nth-child(3n + 3) {
 	top: 2em;
+}
+
+.gridDashboard {
+	margin-bottom: 2em;
 }
 
 .card {
@@ -66,7 +74,7 @@
 
 .date {
 	font-size: 1.1em;
-	color: var(--bg4);
+	color: var(--text4);
 }
 
 .location {
@@ -137,6 +145,7 @@
 	.grid {
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		gap: 1.5em;
+		margin-bottom: 2em;
 	}
 
 	.grid > :nth-child(3n + 2) {
