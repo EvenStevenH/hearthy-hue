@@ -17,10 +17,15 @@ export default function Randomizer({ ideas }) {
 			<h2>Random Ideas</h2>
 
 			<div>
-				<p className="randomIdea">
-					<b>{idea.category}</b>: {idea.subject}
-				</p>
-				<button onClick={getIdea}>Get a new idea!</button>
+				<div className="randomIdea">
+					<p>
+						<b>Category</b>: {idea.category}
+					</p>
+					<p>
+						<b>Subject</b>: {idea.subject}
+					</p>
+				</div>
+				<button onClick={getIdea}>Get a new subject!</button>
 			</div>
 
 			<hr />
