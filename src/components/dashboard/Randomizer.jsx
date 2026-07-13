@@ -13,7 +13,7 @@ export default function Randomizer({ ideas }) {
 	};
 
 	return (
-		<section className="container">
+		<section className="container randomizer">
 			<h2>Random Ideas</h2>
 
 			<div>
@@ -23,8 +23,12 @@ export default function Randomizer({ ideas }) {
 				<button onClick={getIdea}>Get a new idea!</button>
 			</div>
 
+			<hr />
+
 			<div>
-				<p>Your Color Harmony: {colors.harmony}</p>
+				<p>
+					<b>Color Harmony</b>: {colors.harmony}
+				</p>
 				<ul className="randomHarmony">
 					{colors.colors.map((color, index) => (
 						<li

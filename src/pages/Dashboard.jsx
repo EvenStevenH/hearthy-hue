@@ -23,6 +23,15 @@ export default function Dashboard({ eventsData }) {
 		<main>
 			<h1>Dashboard</h1>
 
+			<section className="dashboardSection">
+				<section className="container userFeed">
+					<h2>Feed</h2>
+
+					<div>Feed here!</div>
+				</section>
+				<Randomizer ideas={ideasData.data} />
+			</section>
+
 			<section className="savedEvents">
 				<h2>Your Events</h2>
 
@@ -43,11 +52,6 @@ export default function Dashboard({ eventsData }) {
 						No events saved. <Link to="/events">Find some here!</Link>
 					</p>
 				)}
-			</section>
-
-			<section className="dashboardSection">
-				<Randomizer ideas={ideasData.data} />
-				<Randomizer ideas={ideasData.data} />
 			</section>
 		</main>
 	);

@@ -10,10 +10,8 @@
 	--dark1: #2b1a12;
 	--dark2: #6e5b38;
 
-	--red1: #a75716;
+	--red1: #a55c0d;
 	--red2: #80450e;
-
-	--green1: #2d4215;
 
 	--orange1: #966111;
 	--orange2: #866900;
@@ -72,6 +70,10 @@ main {
 	width: 100%;
 	max-width: 1400px;
 	padding: 2em;
+}
+
+section {
+	margin-bottom: 1em;
 }
 
 footer {
@@ -146,6 +148,10 @@ nav a:hover:not(.active) {
 
 .logoutLink {
 	margin-top: auto;
+}
+
+hr {
+	margin: 2em 0 1em;
 }
 
 button,

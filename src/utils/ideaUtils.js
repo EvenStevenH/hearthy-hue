@@ -23,7 +23,7 @@ export function getRandomRGB() {
 }
 
 export function getRandomHSL(harmony = null, hue = null) {
-	const validHarmonies = ["monochromatic", "complementary", "split", "triadic", "tetradic", "analogous"];
+	const validHarmonies = ["monochromatic", "complementary", "split complementary", "triadic", "tetradic", "analogous"];
 	if (!validHarmonies.includes(harmony)) {
 		harmony = validHarmonies[randomize(validHarmonies.length - 1)];
 	}
@@ -34,7 +34,7 @@ export function getRandomHSL(harmony = null, hue = null) {
 	const harmonies = {
 		"monochromatic": () => [0, 5, -5, randomize(5, -5)],
 		"complementary": () => [0, randomize(10, -10), 180, randomize(190, 170)],
-		"split": () => [0, 150, 210, randomize(210, 150)],
+		"split complementary": () => [0, 150, 210, randomize(210, 150)],
 		"triadic": () => [0, 120, 240, randomize(10, -10)],
 		"tetradic": () => [0, 90, 180, 270],
 		"analogous": () => [0, 30, -30, randomize(30, -30)],
