@@ -3,23 +3,23 @@
 @import url("./login.css");
 
 :root {
-	--text1: white;
-	--text2: black;
-	--text3: #6e5b38;
-	--text4: #945c34;
+	--light1: #fcf6e5;
+	--light2: #eae0c7; /* tags, card edge */
+	--light3: #bfb699; /* back button, input outline */
 
-	--accent1: rgb(247, 207, 75);
-	--accent2: #eae0c7;
-	--accent3: #bfb699;
-	--accent4: #866900;
+	--dark1: #2b1a12;
+	--dark2: #6e5b38;
 
-	--bg1: #524A3A;
-	--bg2: #faf1d9;
-	--bg3: #c85a35;
-	--bg4: #a06236;
-	--bg5: #966111;
-	--bg6: #e7be80;
-	--card-border: #e5dcc1;
+	--red1: #a75716;
+	--red2: #80450e;
+
+	--green1: #2d4215;
+
+	--orange1: #966111;
+	--orange2: #866900;
+	--orange3: #e7be80;
+
+	--bg1: #dcd2bc;
 
 	--nav-width: 200px;
 }
@@ -39,7 +39,7 @@ body {
 	font-family: Avenir, Helvetica, Arial, sans-serif;
 	background-color: var(--bg1);
 	line-height: 1.5;
-	color: var(--text1);
+	color: var(--dark1);
 	word-wrap: break-word;
 }
 
@@ -51,8 +51,8 @@ header {
 	height: 70px;
 	padding: 1em;
 	text-align: center;
-	background: var(--bg4);
-	color: var(--text1);
+	background: var(--orange1);
+	color: var(--light1);
 	display: flex;
 	justify-content: space-between;
 	z-index: 100;
@@ -82,7 +82,7 @@ footer {
 }
 
 footer a {
-	color: var(--accent1);
+	color: var(--red2);
 }
 
 h1 {
@@ -115,7 +115,7 @@ nav {
 	width: var(--nav-width);
 	height: 100vh;
 	padding: 1.5em;
-	background-color: var(--bg2);
+	background-color: var(--light1);
 	overflow: auto;
 	display: flex;
 	flex-direction: column;
@@ -136,12 +136,12 @@ nav a {
 
 nav a.active {
 	box-sizing: border-box;
-	border: var(--bg5) solid 4px;
+	border: var(--orange1) solid 4px;
 }
 
 nav a:hover:not(.active) {
-	background-color: var(--bg6);
-	/* color: var(--text1); */
+	background-color: var(--orange3);
+	/* color: var(--dark1); */
 }
 
 .logoutLink {
@@ -153,11 +153,11 @@ button,
 	font-size: inherit;
 	padding: 0.5em 1em;
 	border: none;
-	background-color: var(--bg5);
+	background-color: var(--orange1);
 	border-radius: 0.5em;
 	cursor: pointer;
 	transition: all 0.2s ease;
-	color: var(--text1);
+	color: var(--light1);
 	text-align: center;
 }
 

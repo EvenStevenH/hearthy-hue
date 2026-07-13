@@ -18,14 +18,14 @@
 }
 
 .rightPane {
-	background-color: var(--bg2);
+	background-color: var(--light1);
 	flex: 1;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	padding: 2em;
-	color: var(--text2);
+	color: var(--dark1);
 }
 
 .loginPanel {
@@ -49,11 +49,11 @@
 }
 
 .loginTop p {
-	color: var(--text3);
+	color: var(--dark2);
 }
 
 .loginPanel a {
-	color: var(--bg5);
+	color: var(--orange1);
 }
 
 .loginPanel form {
@@ -69,7 +69,7 @@
 	font-family: inherit;
 	font-size: 0.9em;
 	border-radius: 0.5em;
-	border: var(--accent3) solid 1px;
+	border: var(--light3) solid 1px;
 }
 
 .register {
@@ -84,7 +84,7 @@
 
 .loginMsg {
 	margin-top: 1em;
-	color: var(--text3);
+	color: var(--dark2);
 	text-align: center;
 	display: flex;
 	flex-direction: column;
