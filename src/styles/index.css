@@ -16,9 +16,9 @@
 
 	--orange1: #966111;
 	--orange2: #866900;
-	--orange3: #e7be80;
 
 	--bg1: #dcd2bc;
+	--bg2: #e8ddc5;
 
 	--nav-width: 200px;
 }
@@ -83,6 +83,10 @@ footer {
 
 footer a {
 	color: var(--red2);
+
+	&:hover {
+		filter: brightness(1.1);
+	}
 }
 
 h1,
@@ -106,10 +110,6 @@ h3 {
 
 a {
 	color: inherit;
-}
-
-a:hover {
-	filter: brightness(1.1);
 }
 
 ul {
@@ -148,7 +148,7 @@ nav a.active {
 }
 
 nav a:hover:not(.active) {
-	background-color: var(--orange3);
+	background-color: var(--bg2);
 }
 
 .logoutLink {

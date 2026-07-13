@@ -42,14 +42,26 @@ export default function Login({ setIsLoggedIn }) {
 	return (
 		<main className="loginPage">
 			<div className="leftPane">
-				<Logo />
+				<Logo
+					className="logoLoginLeft"
+					color="light"
+				/>
+				<img
+					src="/src/assets/img/bianca-fazacas-kVtJBTRvWQA-unsplash.jpg"
+					className="loginBg"
+				/>
 			</div>
 
 			<div className="rightPane">
 				<section className="loginPanel">
+					<Logo
+						className="logoLoginRight"
+						color="dark"
+					/>
+
 					<div className="loginTop">
 						<h1>Welcome back, traveler!</h1>
-						<p>Let's find some new events.</p>
+						<p>Let's find some cozy new events.</p>
 					</div>
 
 					<form onSubmit={handleLogin}>

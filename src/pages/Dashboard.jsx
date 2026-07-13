@@ -1,6 +1,6 @@
 import Randomizer from "../components/dashboard/Randomizer";
 import EventCard from "../components/events/EventCard";
-import { useEvents } from "./../utils/EventsContext";
+import { useEvents } from "../utils/EventsContext";
 import { Link } from "react-router";
 import { useFetch } from "../utils/hooks";
 import ErrorMessage from "../components/ErrorMessage";
