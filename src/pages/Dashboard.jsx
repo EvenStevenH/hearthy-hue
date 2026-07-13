@@ -1,20 +1,43 @@
+import Randomizer from "../components/dashboard/Randomizer";
 import EventCard from "../components/events/EventCard";
-import { useEvents } from "./../utils/EventsContext";
+import { useEvents } from "../utils/EventsContext";
 import { Link } from "react-router";
+import { useFetch } from "../utils/hooks";
+import ErrorMessage from "../components/ErrorMessage";
+import Spinner from "../components/Spinner";
 
-export default function Dashboard({ data }) {
+export default function Dashboard({ eventsData }) {
 	const { savedEvents, removeEvent } = useEvents();
+	const ideasData = useFetch("./../data/ideas.js");
+
+	if (eventsData.loading || ideasData.loading) return <Spinner />;
+	if (eventsData.error || ideasData.error)
+		return (
+			<>
+				<ErrorMessage message={eventsData.error} />
+				<ErrorMessage message={ideasData.error} />
+			</>
+		);
 
 	return (
-		<>
+		<main>
 			<h1>Dashboard</h1>
 
-			<div className="savedEvents">
+			<section className="dashboardSection">
+				<section className="container userFeed">
+					<h2>Feed</h2>
+
+					<div>Feed here!</div>
+				</section>
+				<Randomizer ideas={ideasData.data} />
+			</section>
+
+			<section className="savedEvents">
 				<h2>Your Events</h2>
 
 				{savedEvents.length ? (
-					<div className="grid">
-						{data.events
+					<div className="grid gridDashboard">
+						{eventsData.data.events
 							.filter((event) => savedEvents.includes(event.id))
 							.map((event) => (
 								<EventCard
@@ -29,7 +52,7 @@ export default function Dashboard({ data }) {
 						No events saved. <Link to="/events">Find some here!</Link>
 					</p>
 				)}
-			</div>
-		</>
+			</section>
+		</main>
 	);
 }

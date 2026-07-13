@@ -1,58 +1,59 @@
-import { formatDate, formatTimeRange, formatPrice } from "../../utils/eventUtils.js";
+import { formatDate, formatTimeRange } from "../../utils/eventUtils.js";
 import { useEvents } from "../../utils/EventsContext.jsx";
 import { Link } from "react-router";
 
 export default function EventCard({ event }) {
 	const { addEvent, removeEvent, isEvent } = useEvents();
-	const savedEvent = isEvent(event.id);
+	const isSavedEvent = isEvent(event.id);
 
 	return (
-		<div className="card">
+		<div className="container card">
 			<img
-				src={event.imgURL}
-				alt={event.imgAlt}
+				src={event.img.url}
+				alt={event.img.alt}
+				className="eventImg"
 			/>
 
-			<div>
-				<div className="tags">
-					{event.tags.map((tag) => (
-						<span
-							key={tag}
-							className="tag"
-						>
-							{tag}
-						</span>
-					))}
+			<div className="cardDetails">
+				<div>
+					<div className="tags">
+						{event.tags.map((tag) => (
+							<span
+								key={tag}
+								className="tag"
+							>
+								{tag}
+							</span>
+						))}
+					</div>
+					<h3 className="title">{event.title}</h3>
 				</div>
-				<h3 className="title">{event.title}</h3>
-				<p className="description">{event.description}</p>
+
+				<div>
+					<p className="date">
+						{formatDate(event.startDate, "short", "short")} | {formatTimeRange(event.startDate, event.endDate)}
+					</p>
+					<p className="location">{event.location}</p>
+				</div>
 			</div>
 
-			<div>
-				<p className="notes">{event.notes}</p>
-				<p className="price">{formatPrice(event.price)}</p>
+			<div className="cardBtns">
+				<button
+					id="eventSaveBtn"
+					onClick={() => (isSavedEvent ? removeEvent(event.id) : addEvent(event.id))}
+					className={isSavedEvent ? "saved" : ""}
+				>
+					{isSavedEvent ? "Unsave" : "I'm Interested!"}
+				</button>
+
+				<Link
+					to={`/events/${event.id}`}
+					id="eventDetailsBtn"
+					className="button"
+				>
+					Details
+				</Link>
 			</div>
-
-			<div>
-				<p className="date">
-					{formatDate(event.startDate)} | {formatTimeRange(event.startDate, event.endDate)}
-				</p>
-				<p className="location">{event.location}</p>
-			</div>
-
-			<button
-				className="eventBtn"
-				onClick={() => (savedEvent ? removeEvent(event.id) : addEvent(event.id))}
-			>
-				{savedEvent ? "Unsave Event" : "I'm Interested!"}
-			</button>
-
-			<Link
-				to={`/events/${event.id}`}
-				className="button"
-			>
-				See More Details
-			</Link>
 		</div>
 	);
 }
