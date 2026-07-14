@@ -63,22 +63,6 @@
 	color: var(--orange1);
 }
 
-.loginPanel form {
-	display: flex;
-	flex-direction: column;
-	gap: 1em;
-}
-
-.loginPanel input {
-	margin-top: 0.2em;
-	width: 100%;
-	padding: 1em;
-	font-family: inherit;
-	font-size: 0.9em;
-	border-radius: 0.5em;
-	border: var(--light3) solid 1px;
-}
-
 .register {
 	margin-top: 1.5em;
 	text-align: center;
@@ -89,7 +73,7 @@
 	text-align: left;
 }
 
-.loginMsg {
+#loginMsg {
 	margin-top: 1em;
 	color: var(--dark2);
 	text-align: center;
@@ -98,7 +82,7 @@
 	gap: 0.5em;
 }
 
-.loginBtn {
+#loginBtn {
 	padding: 1em;
 	margin-top: 1em;
 }

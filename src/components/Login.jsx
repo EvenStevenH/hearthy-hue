@@ -94,7 +94,7 @@ export default function Login({ setIsLoggedIn }) {
 						<button
 							type="submit"
 							onClick={handleLogin}
-							className="loginBtn"
+							id="loginBtn"
 						>
 							Log In
 						</button>
@@ -111,7 +111,7 @@ export default function Login({ setIsLoggedIn }) {
 						!
 					</p>
 
-					{loginMsg && <div className="loginMsg">{loginMsg}</div>}
+					{loginMsg && <div id="loginMsg">{loginMsg}</div>}
 				</section>
 			</div>
 		</main>

@@ -1,4 +1,5 @@
-@import url("./App.css");
+@import url("./common.css");
+@import url("./about.css");
 @import url("./dashboard.css");
 @import url("./events.css");
 @import url("./login.css");
@@ -202,6 +203,25 @@ button:focus-visible,
 .button:focus-visible {
 	outline: 3px solid var(--orange1);
 	outline-offset: 3px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+}
+
+input,
+textarea {
+	margin-top: 0.2em;
+	width: 100%;
+	padding: 1em;
+	font-family: inherit;
+	font-size: 0.9em;
+	border-radius: 0.5em;
+	border: var(--light3) solid 1px;
+	display: block;
+	resize: none;
 }
 
 /* -------------------------------------------------------------------------- */

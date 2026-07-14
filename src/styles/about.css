@@ -1,0 +1,36 @@
+.about {
+	margin: auto;
+
+	display: grid;
+	grid-template-columns: 2fr 1.5fr;
+	gap: 1em;
+}
+
+.aboutSection p,
+.aboutSection ul {
+	margin-bottom: 1em;
+}
+
+.aboutSection li {
+	margin-bottom: 0.5em;
+}
+
+.contactForm {
+	display: flex;
+	flex-direction: column;
+}
+
+#character-counter {
+	margin-top: 0.5em;
+}
+
+#formMsg {
+	text-align: center;
+}
+
+/* -------------------------------------------------------------------------- */
+@media screen and (max-width: 1000px) {
+	.about {
+		grid-template-columns: 1fr
+	}
+}
