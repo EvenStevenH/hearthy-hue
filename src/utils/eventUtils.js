@@ -19,6 +19,10 @@ export function formatDate(startDate, weekday, month) {
 	return new Date(startDate).toLocaleDateString("en-US", options);
 }
 
+export function sortByStartDate(a, b) {
+	return new Date(a.startDate).getTime() - new Date(b.startDate).getTime();
+}
+
 export function formatPrice(price) {
 	return price ? `$${price}` : "Free";
 }

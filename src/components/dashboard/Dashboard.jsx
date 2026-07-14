@@ -1,10 +1,11 @@
 import Randomizer from "./Randomizer";
 import EventCard from "../events/EventCard";
+import ErrorMessage from "../ErrorMessage";
+import Loader from "../Loader";
 import { useEvents } from "../../utils/EventsContext";
 import { Link } from "react-router";
 import { useFetch } from "../../utils/hooks";
-import ErrorMessage from "../ErrorMessage";
-import Loader from "../Loader";
+import { sortByStartDate } from "../../utils/eventUtils";
 
 export default function Dashboard({ eventsData }) {
 	const { savedEvents, removeEvent } = useEvents();
@@ -39,6 +40,7 @@ export default function Dashboard({ eventsData }) {
 					<div className="grid gridDashboard">
 						{eventsData.data.events
 							.filter((event) => savedEvents.includes(event.id))
+							.sort((a, b) => sortByStartDate(a, b))
 							.map((event) => (
 								<EventCard
 									event={event}
