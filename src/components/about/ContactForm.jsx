@@ -12,7 +12,7 @@ export default function ContactForm() {
 	function handleChange(e) {
 		const { name, value } = e.target;
 		setFormData((prev) => ({ ...prev, [name]: value }));
-		setFormMsg("");
+		setFormMsg("This is a mock form, so submissions won't go anywhere!");
 	}
 
 	function handleForm(event) {
@@ -24,7 +24,7 @@ export default function ContactForm() {
 				email: "",
 				message: "",
 			});
-			setFormMsg("Thanks for your message, traveler!");
+			setFormMsg('Thanks for your "message", traveler!');
 		} else {
 			return setFormMsg("Please complete all required fields.");
 		}
@@ -63,7 +63,7 @@ export default function ContactForm() {
 				</div>
 			</div>
 
-			<div>
+			<div className="messageField">
 				<label htmlFor="message">Message:</label>
 				<textarea
 					id="message"
@@ -71,11 +71,11 @@ export default function ContactForm() {
 					rows="5"
 					value={formData.message}
 					onChange={handleChange}
-					maxLength="200"
+					maxLength="500"
 					placeholder="Enter your message here..."
 					required
 				/>
-				<div id="character-counter">{`${formData.message.length} / 200 characters`}</div>
+				<div id="character-counter">{`${formData.message.length} / 500 characters`}</div>
 			</div>
 
 			<button

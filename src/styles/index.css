@@ -84,14 +84,6 @@ footer {
 	margin: 2em auto;
 }
 
-footer a {
-	color: var(--red2);
-}
-
-footer a:hover {
-	filter: brightness(1.1);
-}
-
 h1,
 h2,
 h3 {
@@ -120,7 +112,11 @@ h4 {
 }
 
 a {
-	color: inherit;
+	color: var(--red2);
+}
+
+a:hover {
+	filter: brightness(1.1);
 }
 
 ul {
