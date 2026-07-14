@@ -1,6 +1,6 @@
-import { Link, NavLink, useNavigate } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 
-export default function Nav({ setIsLoggedIn }) {
+export default function Nav({ setIsLoggedIn, menuOpen }) {
 	const navigate = useNavigate();
 
 	function handleLogout() {
@@ -8,17 +8,18 @@ export default function Nav({ setIsLoggedIn }) {
 		navigate("/login");
 	}
 	return (
-		<nav>
+		<nav className={menuOpen ? "open" : ""}>
 			<NavLink to="/dashboard">Dashboard</NavLink>
 			<NavLink to="/events">Events</NavLink>
 			<NavLink to="/user">Your Profile</NavLink>
 			<NavLink to="/about">About</NavLink>
-			<Link
+			<NavLink
+				to="/login"
 				className="logoutLink"
 				onClick={handleLogout}
 			>
 				Log Out
-			</Link>
+			</NavLink>
 		</nav>
 	);
 }

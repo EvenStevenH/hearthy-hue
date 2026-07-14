@@ -1,10 +1,10 @@
-import Randomizer from "../components/dashboard/Randomizer";
-import EventCard from "../components/events/EventCard";
-import { useEvents } from "../utils/EventsContext";
+import Randomizer from "./Randomizer";
+import EventCard from "../events/EventCard";
+import { useEvents } from "../../utils/EventsContext";
 import { Link } from "react-router";
-import { useFetch } from "../utils/hooks";
-import ErrorMessage from "../components/ErrorMessage";
-import Spinner from "../components/Spinner";
+import { useFetch } from "../../utils/hooks";
+import ErrorMessage from "../ErrorMessage";
+import Spinner from "../Spinner";
 
 export default function Dashboard({ eventsData }) {
 	const { savedEvents, removeEvent } = useEvents();
