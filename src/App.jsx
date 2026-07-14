@@ -1,5 +1,4 @@
 import Header from "./components/Header.jsx";
-import Nav from "./components/Nav.jsx";
 import Footer from "./components/Footer.jsx";
 import Login from "./components/Login.jsx";
 import About from "./components/About.jsx";
@@ -24,12 +23,7 @@ export default function App() {
 					<Header
 						menuOpen={menuOpen}
 						setMenuOpen={setMenuOpen}
-					/>
-
-					<Nav
 						setIsLoggedIn={setIsLoggedIn}
-						menuOpen={menuOpen}
-						setMenuOpen={setMenuOpen}
 					/>
 
 					<div className="content">
