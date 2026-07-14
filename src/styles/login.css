@@ -33,11 +33,11 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	padding: 2em;
+	padding: 1em;
 }
 
 .loginPanel {
-	width: 550px;
+	width: 500px;
 	margin: 0;
 	display: flex;
 	flex-direction: column;
@@ -74,6 +74,8 @@
 }
 
 #loginMsg {
+	max-width: 350px;
+	margin: auto;
 	margin-top: 1em;
 	color: var(--dark2);
 	text-align: center;

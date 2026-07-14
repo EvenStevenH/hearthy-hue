@@ -1,4 +1,5 @@
 import Randomizer from "./Randomizer";
+import PostCard from "./PostCard";
 import EventCard from "../events/EventCard";
 import ErrorMessage from "../ErrorMessage";
 import Loader from "../Loader";
@@ -10,13 +11,15 @@ import { sortByStartDate } from "../../utils/eventUtils";
 export default function Dashboard({ eventsData }) {
 	const { savedEvents, removeEvent } = useEvents();
 	const ideasData = useFetch("./../data/ideas.js");
+	const feedData = useFetch("./../data/feed.js");
 
-	if (eventsData.loading || ideasData.loading) return <Loader />;
-	if (eventsData.error || ideasData.error)
+	if (eventsData.loading || ideasData.loading || feedData.loading) return <Loader />;
+	if (eventsData.error || ideasData.error || feedData.error)
 		return (
 			<>
 				<ErrorMessage message={eventsData.error} />
 				<ErrorMessage message={ideasData.error} />
+				<ErrorMessage message={feedData.error} />
 			</>
 		);
 
@@ -25,11 +28,23 @@ export default function Dashboard({ eventsData }) {
 			<h1>Dashboard</h1>
 
 			<section className="dashboardSection">
-				<section className="container userFeed">
+				<section className="container">
 					<h2>Feed</h2>
 
-					<div>Feed here!</div>
+					{feedData.data.feed.length ? (
+						<div className="postFeed">
+							{feedData.data.feed.map((post) => (
+								<PostCard
+									post={post}
+									key={post.id}
+								/>
+							))}
+						</div>
+					) : (
+						<p className="emptyMsg">No posts available.</p>
+					)}
 				</section>
+
 				<Randomizer ideas={ideasData.data} />
 			</section>
 
