@@ -1,11 +1,11 @@
 import ErrorMessage from "../ErrorMessage";
 import EventCard from "./EventCard";
-import Spinner from "../Spinner";
+import Loader from "../Loader";
 
 export default function EventsPage({ eventsData }) {
 	const { data, loading, error } = eventsData;
 
-	if (loading) return <Spinner />;
+	if (loading) return <Loader />;
 	if (error) return <ErrorMessage message={error} />;
 
 	return (

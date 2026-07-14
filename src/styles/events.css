@@ -112,19 +112,19 @@
 }
 
 /* -------------------------------------------------------------------------- */
-.event-detail {
+.eventDetails {
 	padding: 3em;
 	flex-direction: row;
 	gap: 2em;
 	align-items: normal;
-	margin-bottom: 1em;
+	margin: auto;
 }
 
-.event-detail > * {
+.eventDetails > * {
 	flex: 1;
 }
 
-.event-detail > .cardDetails {
+.eventDetails > .cardDetails {
 	margin: auto;
 	display: flex;
 	gap: 0.5em;
@@ -132,17 +132,17 @@
 	justify-content: space-around;
 }
 
-.event-detail > .cardDetails > .cardBtns {
+.eventDetails > .cardDetails > .cardBtns {
 	margin-top: 1em;
 }
 
 /* -------------------------------------------------------------------------- */
 @media screen and (max-width: 1200px) {
-	.event-detail {
+	.eventDetails {
 		flex-direction: column;
 	}
 
-	.event-detail > .cardDetails {
+	.eventDetails > .cardDetails {
 		margin: 0;
 	}
 

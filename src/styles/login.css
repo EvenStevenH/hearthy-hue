@@ -4,6 +4,7 @@
 	height: 100vh;
 	max-width: 100%;
 	padding: 0;
+	color: var(--dark1);
 }
 
 .leftPane {
@@ -13,7 +14,6 @@
 	justify-content: center;
 	position: relative;
 	background-color: var(--dark1);
-	z-index: -2;
 }
 
 .loginBg {
@@ -21,7 +21,7 @@
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	z-index: -1;
+	z-index: 1;
 	opacity: 0.8;
 	filter: brightness(0.2) contrast(0.8) sepia(0.4);
 }
@@ -34,7 +34,6 @@
 	align-items: center;
 	justify-content: center;
 	padding: 2em;
-	color: var(--dark1);
 }
 
 .loginPanel {
@@ -109,6 +108,7 @@
 	color: var(--light1);
 	text-align: center;
 	flex-direction: column;
+	z-index: 2;
 }
 
 .logoLoginLeft .logoImg {

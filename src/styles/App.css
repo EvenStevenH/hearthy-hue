@@ -34,11 +34,11 @@
 	transform: rotate(6deg);
 }
 
-.spinner {
+.loader {
 	margin: auto;
 }
 
-.loader {
+.spinner {
 	border: 20px solid var(--light1);
 	border-top: 20px solid var(--red1);
 	border-radius: 100%;

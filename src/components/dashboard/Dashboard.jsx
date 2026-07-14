@@ -4,13 +4,13 @@ import { useEvents } from "../../utils/EventsContext";
 import { Link } from "react-router";
 import { useFetch } from "../../utils/hooks";
 import ErrorMessage from "../ErrorMessage";
-import Spinner from "../Spinner";
+import Loader from "../Loader";
 
 export default function Dashboard({ eventsData }) {
 	const { savedEvents, removeEvent } = useEvents();
 	const ideasData = useFetch("./../data/ideas.js");
 
-	if (eventsData.loading || ideasData.loading) return <Spinner />;
+	if (eventsData.loading || ideasData.loading) return <Loader />;
 	if (eventsData.error || ideasData.error)
 		return (
 			<>
