@@ -29,8 +29,8 @@ export function formatDate(startDate, weekday, month) {
 	return new Date(startDate).toLocaleDateString("en-US", options);
 }
 
-export function sortByStartDate(a, b) {
-	return new Date(a.startDate).getTime() - new Date(b.startDate).getTime();
+export function sortByStartDate(a, b, date) {
+	return new Date(a[date]).getTime() - new Date(b[date]).getTime();
 }
 
 export function formatPrice(price) {

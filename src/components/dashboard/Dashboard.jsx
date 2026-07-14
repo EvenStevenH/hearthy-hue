@@ -33,12 +33,14 @@ export default function Dashboard({ eventsData }) {
 
 					{feedData.data.feed.length ? (
 						<div className="postFeed">
-							{feedData.data.feed.map((post) => (
-								<PostCard
-									post={post}
-									key={post.id}
-								/>
-							))}
+							{feedData.data.feed
+								.sort((a, b) => sortByStartDate(a, b, "timestamp"))
+								.map((post) => (
+									<PostCard
+										post={post}
+										key={post.id}
+									/>
+								))}
 						</div>
 					) : (
 						<p className="emptyMsg">No posts available.</p>
@@ -55,7 +57,7 @@ export default function Dashboard({ eventsData }) {
 					<div className="grid gridDashboard">
 						{eventsData.data.events
 							.filter((event) => savedEvents.includes(event.id))
-							.sort((a, b) => sortByStartDate(a, b))
+							.sort((a, b) => sortByStartDate(a, b, "startDate"))
 							.map((event) => (
 								<EventCard
 									event={event}

@@ -43,7 +43,7 @@
 	flex-direction: column;
 	justify-content: space-between;
 	border-radius: 1em;
-	padding: 3em;
+	padding: 2em;
 }
 
 .loginTop {
@@ -52,6 +52,7 @@
 }
 
 .loginTop h1 {
+	font-size: 2em;
 	margin-bottom: 0;
 }
 
@@ -74,7 +75,7 @@
 }
 
 #loginMsg {
-	max-width: 350px;
+	max-width: 300px;
 	margin: auto;
 	margin-top: 1em;
 	color: var(--dark2);

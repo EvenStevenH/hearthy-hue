@@ -35,30 +35,34 @@ export default function ContactForm() {
 			className="contactForm"
 			onSubmit={handleForm}
 		>
-			<div>
-				<label htmlFor="name">Name:</label>
-				<input
-					type="text"
-					id="name"
-					name="name"
-					value={formData.name}
-					onChange={handleChange}
-					placeholder="Your name"
-					required
-				/>
+			<div className="contactFormTop">
+				<div>
+					<label htmlFor="name">Name:</label>
+					<input
+						type="text"
+						id="name"
+						name="name"
+						value={formData.name}
+						onChange={handleChange}
+						placeholder="Your name"
+						required
+					/>
+				</div>
+
+				<div>
+					<label htmlFor="email">Email:</label>
+					<input
+						type="email"
+						id="email"
+						name="email"
+						value={formData.email}
+						onChange={handleChange}
+						placeholder="Your email address"
+						required
+					/>
+				</div>
 			</div>
-			<div>
-				<label htmlFor="email">Email:</label>
-				<input
-					type="email"
-					id="email"
-					name="email"
-					value={formData.email}
-					onChange={handleChange}
-					placeholder="Your email address"
-					required
-				/>
-			</div>
+
 			<div>
 				<label htmlFor="message">Message:</label>
 				<textarea
@@ -70,7 +74,7 @@ export default function ContactForm() {
 					maxLength="200"
 					placeholder="Enter your message here..."
 					required
-				></textarea>
+				/>
 				<div id="character-counter">{`${formData.message.length} / 200 characters`}</div>
 			</div>
 

@@ -26,7 +26,7 @@ export default function Login({ setIsLoggedIn }) {
 	function handleRegister() {
 		return setLoginMsg(
 			<>
-				<p>Thank you for your interest! This is just a demo app, so please use the following credentials:</p>
+				<p>Thanks for your interest! For this demo, please use these credentials:</p>
 				<div className="credentials">
 					<p>
 						<b>Email</b>: steven@email.com

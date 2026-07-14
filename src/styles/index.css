@@ -228,7 +228,6 @@ textarea {
 	font-size: 0.9em;
 	border-radius: 0.5em;
 	border: var(--light3) solid 1px;
-	display: block;
 	resize: none;
 }
 
