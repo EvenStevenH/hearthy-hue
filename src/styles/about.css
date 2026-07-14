@@ -22,15 +22,18 @@
 
 #character-counter {
 	margin-top: 0.5em;
+	text-align: right;
+	color: var(--dark2);
 }
 
 #formMsg {
 	text-align: center;
+	color: var(--dark2);
 }
 
 /* -------------------------------------------------------------------------- */
 @media screen and (max-width: 1000px) {
 	.about {
-		grid-template-columns: 1fr
+		grid-template-columns: 1fr;
 	}
 }

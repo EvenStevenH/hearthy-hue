@@ -12,6 +12,7 @@ export default function ContactForm() {
 	function handleChange(e) {
 		const { name, value } = e.target;
 		setFormData((prev) => ({ ...prev, [name]: value }));
+		setFormMsg("");
 	}
 
 	function handleForm(event) {
@@ -23,7 +24,7 @@ export default function ContactForm() {
 				email: "",
 				message: "",
 			});
-			setFormMsg("Thanks for your message!");
+			setFormMsg("Thanks for your message, traveler!");
 		} else {
 			return setFormMsg("Please complete all required fields.");
 		}
