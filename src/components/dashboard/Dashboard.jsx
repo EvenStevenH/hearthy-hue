@@ -54,7 +54,7 @@ export default function Dashboard({ eventsData }) {
 				<h2>Your Events</h2>
 
 				{savedEvents.length ? (
-					<div className="grid gridDashboard">
+					<div className="gridDashboard">
 						{eventsData.data.events
 							.filter((event) => savedEvents.includes(event.id))
 							.sort((a, b) => sortByStartDate(a, b, "startDate"))

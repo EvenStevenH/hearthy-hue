@@ -3,6 +3,7 @@
 @import url("./dashboard.css");
 @import url("./events.css");
 @import url("./login.css");
+@import url("./user.css");
 
 :root {
 	--light1: #fcf6e5;
@@ -201,6 +202,7 @@ button,
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	gap: 0.5em;
 }
 
 button:hover,

@@ -8,7 +8,7 @@ export default function EventCard({ event }) {
 	const isSavedEvent = isEvent(event.id);
 
 	return (
-		<div className="container card">
+		<div className="container card eventCard">
 			<img
 				src={event.img.url}
 				alt={event.img.alt}
