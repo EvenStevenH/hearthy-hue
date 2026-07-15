@@ -76,7 +76,12 @@ export default function ContactForm() {
 					onChange={handleChange}
 					required
 				>
-					<option value="">Select a Reason</option>
+					<option
+						value=""
+						disabled
+					>
+						Select a Reason
+					</option>
 					<option value="inquiry">Inquiries</option>
 					<option value="bug-report">Bug Report</option>
 					<option value="support-request">Support Request</option>

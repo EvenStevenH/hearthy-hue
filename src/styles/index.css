@@ -12,6 +12,7 @@
 
 	--dark1: #2b1a12;
 	--dark2: #6e5b38;
+	--dark3: #796e5a;
 
 	--red1: #a55c0d;
 	--red2: #80450e;
@@ -19,7 +20,7 @@
 	--orange1: #966111;
 	--orange2: #866900;
 
-	--bg1: #dcd2bc;
+	--bg1: #e7ddc8;
 	--bg2: #e8ddc5;
 
 	--nav-width: 200px;
@@ -69,12 +70,14 @@ header {
 	justify-content: space-between;
 	align-items: center;
 	min-height: calc(100vh - var(--header-height));
+	background: url(../assets/pattern.png);
+	background-repeat: repeat;
 }
 
 main {
 	width: 100%;
 	max-width: 1400px;
-	padding: 2em;
+	padding: 2em 2em 0;
 }
 
 footer {
@@ -130,7 +133,7 @@ nav {
 	left: 0;
 	width: var(--nav-width);
 	height: 100vh;
-	padding: 2.5em 1.5em;
+	padding: 2.5em 1em;
 	background-color: var(--light1);
 	overflow: auto;
 	display: flex;
@@ -141,32 +144,40 @@ nav {
 
 nav a {
 	font-size: 1.2em;
-	display: block;
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
 	color: black;
-	padding: 0.6em 1em;
+	padding: 0.4em 0.8em;
 	text-decoration: none;
 	border-radius: 0.5em;
 	transition:
 		background-color ease 0.4s,
 		border-color ease 0.4s;
-	border: transparent solid 4px;
+	border: transparent solid 0.2em;
 }
 
 nav a.active {
-	box-sizing: border-box;
 	border: var(--orange1) solid 0.2em;
 }
 
 nav a:hover:not(.active) {
 	background-color: var(--bg2);
+	filter: none;
 }
 
-#menu-toggle {
-	display: none;
+.navIcon {
+	width: 20px;
+	height: 20px;
+	color: var(--dark3);
 }
 
 .navBottom {
 	margin-top: auto;
+}
+
+#menu-toggle {
+	display: none;
 }
 
 hr {
@@ -217,10 +228,11 @@ form {
 }
 
 input,
-textarea {
+textarea,
+select {
 	margin-top: 0.2em;
 	width: 100%;
-	padding: 1em;
+	padding: 0.8em 1em;
 	font-family: inherit;
 	font-size: 0.9em;
 	border-radius: 0.5em;
@@ -255,7 +267,7 @@ textarea {
 		font-size: 1em;
 	}
 
-	.logoutLink {
+	.navBottom {
 		margin-top: 0;
 	}
 
@@ -279,6 +291,7 @@ textarea {
 		left: 0;
 		background: var(--light1);
 		flex-direction: column;
+		gap: 0.4em;
 	}
 
 	nav.open {
