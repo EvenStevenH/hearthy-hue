@@ -1,28 +1,32 @@
-import { Navigate, useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { useEvents } from "../../utils/EventsContext.jsx";
 import { formatDate, formatTimeRange, formatPrice } from "../../utils/eventUtils.js";
-import { Link } from "react-router";
-import Spinner from "../Spinner.jsx";
+import Loader from "../Loader.jsx";
 import ErrorMessage from "../ErrorMessage.jsx";
 
 export default function EventDetails({ eventsData }) {
 	const { eventId } = useParams();
 	const { addEvent, removeEvent, isEvent } = useEvents();
 	const { data, loading, error } = eventsData;
+	const navigate = useNavigate();
 
-	if (loading) return <Spinner />;
+	if (loading) return <Loader />;
 	if (error) return error && <ErrorMessage message={error} />;
 
+	function handleBack() {
+		window.history.length > 1 ? navigate(-1) : navigate("/events");
+	}
+
 	const event = data.events.find((event) => String(event.id) === eventId);
-	if (!event) return <Navigate to="/events" />;
+	if (!event) return navigate("/events");
 	const isSavedEvent = isEvent(event.id);
 
 	return (
-		<main className="container event-detail">
+		<main className="container eventDetails">
 			<img
 				src={event.img.url}
 				alt={event.img.alt}
-				className="eventImg"
+				id="eventImg"
 			/>
 
 			<section className="cardDetails">
@@ -64,13 +68,13 @@ export default function EventDetails({ eventsData }) {
 						{isSavedEvent ? "Unsave" : "I'm Interested!"}
 					</button>
 
-					<Link
-						to={`/events`}
+					<button
 						id="backBtn"
 						className="button"
+						onClick={handleBack}
 					>
 						Back
-					</Link>
+					</button>
 				</div>
 			</section>
 		</main>

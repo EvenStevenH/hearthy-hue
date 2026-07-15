@@ -11,7 +11,7 @@ export default function EventCard({ event }) {
 			<img
 				src={event.img.url}
 				alt={event.img.alt}
-				className="eventImg"
+				id="eventImg"
 			/>
 
 			<div className="cardDetails">

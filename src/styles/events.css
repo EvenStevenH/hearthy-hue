@@ -22,24 +22,22 @@
 }
 
 .gridDashboard > .card > img {
-	/* display: none; */
-	aspect-ratio: 16 / 9; 
+	aspect-ratio: 16 / 9;
 }
 
 .card {
 	/* aspect-ratio: 8.8 / 10.7; */
-	will-change: transform;
 	transition: transform ease 0.4s;
 	position: relative;
-
-	&:hover {
-		transform: rotate(0.5deg) scale(1.02) translateY(-2px);
-	}
 }
 
-.eventImg {
+.card:hover {
+	transform: rotate(0.5deg) scale(1.02) translateY(-2px);
+}
+
+#eventImg {
 	width: 100%;
-	height: auto;
+	display: block;
 	object-fit: cover;
 	aspect-ratio: 1 / 1;
 	filter: sepia(40%) contrast(80%);
@@ -114,19 +112,19 @@
 }
 
 /* -------------------------------------------------------------------------- */
-.event-detail {
+.eventDetails {
 	padding: 3em;
 	flex-direction: row;
 	gap: 2em;
 	align-items: normal;
-	margin-bottom: 1em;
+	margin: auto;
 }
 
-.event-detail > * {
+.eventDetails > * {
 	flex: 1;
 }
 
-.event-detail > .cardDetails {
+.eventDetails > .cardDetails {
 	margin: auto;
 	display: flex;
 	gap: 0.5em;
@@ -134,17 +132,17 @@
 	justify-content: space-around;
 }
 
-.event-detail > .cardDetails > .cardBtns {
+.eventDetails > .cardDetails > .cardBtns {
 	margin-top: 1em;
 }
 
 /* -------------------------------------------------------------------------- */
 @media screen and (max-width: 1200px) {
-	.event-detail {
+	.eventDetails {
 		flex-direction: column;
 	}
 
-	.event-detail > .cardDetails {
+	.eventDetails > .cardDetails {
 		margin: 0;
 	}
 

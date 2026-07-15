@@ -1,12 +1,13 @@
-@import url("./App.css");
+@import url("./common.css");
+@import url("./about.css");
 @import url("./dashboard.css");
 @import url("./events.css");
 @import url("./login.css");
 
 :root {
 	--light1: #fcf6e5;
-	--light2: #eae0c7; /* tags, card edge */
-	--light3: #bfb699; /* back button, input outline */
+	--light2: #eae0c7;
+	--light3: #bfb699;
 
 	--dark1: #2b1a12;
 	--dark2: #6e5b38;
@@ -21,6 +22,7 @@
 	--bg2: #e8ddc5;
 
 	--nav-width: 200px;
+	--header-height: 70px;
 }
 
 *,
@@ -47,7 +49,7 @@ header {
 	top: 0;
 	left: var(--nav-width);
 	right: 0;
-	height: 70px;
+	height: var(--header-height);
 	padding: 1em;
 	text-align: center;
 	background: var(--orange1);
@@ -59,12 +61,13 @@ header {
 
 .content {
 	margin-left: var(--nav-width);
-	margin-top: 100px;
+	margin-top: var(--header-height);
 	padding: 1em;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
+	min-height: calc(100vh - var(--header-height));
 }
 
 main {
@@ -81,14 +84,6 @@ footer {
 	margin: 2em auto;
 }
 
-footer a {
-	color: var(--red2);
-
-	&:hover {
-		filter: brightness(1.1);
-	}
-}
-
 h1,
 h2,
 h3 {
@@ -97,7 +92,7 @@ h3 {
 }
 
 h1 {
-	font-size: 2em;
+	font-size: 2.4em;
 }
 
 h2 {
@@ -108,8 +103,20 @@ h3 {
 	font-size: 1.5em;
 }
 
+h4 {
+	font-family: "Arvo", serif;
+}
+
+h4 {
+	font-size: 1.2em;
+}
+
 a {
-	color: inherit;
+	color: var(--red2);
+}
+
+a:hover {
+	filter: brightness(1.1);
 }
 
 ul {
@@ -122,7 +129,7 @@ nav {
 	left: 0;
 	width: var(--nav-width);
 	height: 100vh;
-	padding: 1.5em;
+	padding: 2.5em 1.5em;
 	background-color: var(--light1);
 	overflow: auto;
 	display: flex;
@@ -138,20 +145,26 @@ nav a {
 	padding: 0.6em 1em;
 	text-decoration: none;
 	border-radius: 0.5em;
-	transition: all ease 0.2s;
+	transition:
+		background-color ease 0.4s,
+		border-color ease 0.4s;
 	border: transparent solid 4px;
 }
 
 nav a.active {
 	box-sizing: border-box;
-	border: var(--orange1) solid 4px;
+	border: var(--orange1) solid 0.2em;
 }
 
 nav a:hover:not(.active) {
 	background-color: var(--bg2);
 }
 
-.logoutLink {
+#menu-toggle {
+	display: none;
+}
+
+.navBottom {
 	margin-top: auto;
 }
 
@@ -168,7 +181,9 @@ button,
 	background-color: var(--orange1);
 	border-radius: 0.5em;
 	cursor: pointer;
-	transition: all 0.2s ease;
+	transition:
+		transform 0.2s ease,
+		filter 0.2s ease;
 	color: var(--light1);
 	text-align: center;
 	display: flex;
@@ -188,8 +203,28 @@ button:active,
 	filter: brightness(1.05);
 }
 
-.about {
-	margin-bottom: 1em;
+button:focus-visible,
+.button:focus-visible {
+	outline: 3px solid var(--orange1);
+	outline-offset: 3px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+}
+
+input,
+textarea {
+	margin-top: 0.2em;
+	width: 100%;
+	padding: 1em;
+	font-family: inherit;
+	font-size: 0.9em;
+	border-radius: 0.5em;
+	border: var(--light3) solid 1px;
+	resize: none;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -201,17 +236,21 @@ button:active,
 	}
 
 	nav {
-		padding: 1em;
-		top: 70px;
+		padding: 0.5em;
+		top: var(--header-height);
 		width: 100%;
 		height: auto;
 		flex-direction: row;
 		position: relative;
 		align-items: center;
+		z-index: 1;
+		border-bottom: solid 2px var(--light2);
+		box-shadow: 5px 5px 5px rgba(42, 41, 41, 0.2);
 	}
 
 	nav a {
-		padding: 0.5em 1em;
+		padding: 0.4em 0.8em;
+		font-size: 1em;
 	}
 
 	.logoutLink {
@@ -224,20 +263,39 @@ button:active,
 }
 
 @media screen and (max-width: 600px) {
+	header {
+		justify-content: space-between;
+	}
+
 	main {
 		padding: 0;
 	}
 
 	nav {
+		display: none;
+		position: fixed;
+		left: 0;
+		background: var(--light1);
 		flex-direction: column;
+	}
+
+	nav.open {
+		display: flex;
 	}
 
 	nav a {
 		width: 100%;
 	}
 
-	nav {
-		align-items: stretch;
-		text-align: center;
+	#menu-toggle {
+		display: block;
+	}
+
+	.logoText {
+		font-size: 0.8em;
+	}
+
+	.logoImg {
+		width: 1em;
 	}
 }

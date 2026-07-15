@@ -9,6 +9,7 @@
 	box-shadow: 5px 5px 5px rgba(42, 41, 41, 0.2);
 }
 
+/* -------------------------------------------------------------------------- */
 .logo {
 	display: flex;
 	justify-content: center;
@@ -26,13 +27,26 @@
 	font-size: 1.5em;
 }
 
+.logoImg {
+	transition: transform 0.2s ease;
+}
+
+.logoImg:hover {
+	transform: rotate(6deg);
+}
+
+/* -------------------------------------------------------------------------- */
 .loader {
-	border: 5px solid var(--light1);
-	border-top: 5px solid #ff7043;
-	border-radius: 50%;
-	width: 40px;
-	height: 40px;
-	margin: 0 auto 10px auto;
+	margin: auto;
+}
+
+.spinner {
+	border: 20px solid var(--light1);
+	border-top: 20px solid var(--red1);
+	border-radius: 100%;
+	width: 60px;
+	height: 60px;
+	margin: 0 auto 1em;
 	animation: spin 1s linear infinite;
 }
 
@@ -41,3 +55,4 @@
 		transform: rotate(360deg);
 	}
 }
+

@@ -9,6 +9,16 @@ export function formatTimeRange(startDate, endDate) {
 	return `${startTime} – ${endTime}`;
 }
 
+export function formatTime(date) {
+	const options = {
+		hour: "numeric",
+		minute: "2-digit",
+		hour12: true,
+	};
+	const time = new Date(date).toLocaleTimeString("en-US", options);
+	return `${time}`;
+}
+
 export function formatDate(startDate, weekday, month) {
 	const options = {
 		weekday: weekday || "long",
@@ -17,6 +27,10 @@ export function formatDate(startDate, weekday, month) {
 		day: "numeric",
 	};
 	return new Date(startDate).toLocaleDateString("en-US", options);
+}
+
+export function sortByStartDate(a, b, date) {
+	return new Date(a[date]).getTime() - new Date(b[date]).getTime();
 }
 
 export function formatPrice(price) {

@@ -1,6 +1,6 @@
 import { useNavigate, Link } from "react-router";
 import { useState } from "react";
-import Logo from "../components/Logo";
+import Logo from "./Logo";
 
 export default function Login({ setIsLoggedIn }) {
 	const validEmail = "steven@email.com";
@@ -26,7 +26,7 @@ export default function Login({ setIsLoggedIn }) {
 	function handleRegister() {
 		return setLoginMsg(
 			<>
-				<p>Thank you for your interest! This is just a demo app, so please use the following credentials:</p>
+				<p>Thanks for your interest! For this demo, please use these credentials:</p>
 				<div className="credentials">
 					<p>
 						<b>Email</b>: steven@email.com
@@ -47,7 +47,7 @@ export default function Login({ setIsLoggedIn }) {
 					color="light"
 				/>
 				<img
-					src="/src/assets/img/bianca-fazacas-kVtJBTRvWQA-unsplash.jpg"
+					src="/src/assets/img/studio.jpg"
 					className="loginBg"
 				/>
 			</div>
@@ -94,7 +94,7 @@ export default function Login({ setIsLoggedIn }) {
 						<button
 							type="submit"
 							onClick={handleLogin}
-							className="loginBtn"
+							id="loginBtn"
 						>
 							Log In
 						</button>
@@ -111,7 +111,7 @@ export default function Login({ setIsLoggedIn }) {
 						!
 					</p>
 
-					{loginMsg && <div className="loginMsg">{loginMsg}</div>}
+					{loginMsg && <div id="loginMsg">{loginMsg}</div>}
 				</section>
 			</div>
 		</main>
