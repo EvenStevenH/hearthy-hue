@@ -61,7 +61,7 @@
 	font-size: 0.8em;
 	letter-spacing: 2px;
 	padding: 0.2em 0.8em;
-	background: var(--light2);
+	background: var(--light3);
 	color: var(--dark2);
 }
 
@@ -97,7 +97,7 @@
 
 #eventDetailsBtn,
 #backBtn {
-	background: var(--light3);
+	background: var(--light4);
 	color: var(--dark1);
 	text-decoration: none;
 }
