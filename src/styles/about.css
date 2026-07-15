@@ -5,16 +5,17 @@
 	gap: 1em;
 }
 
-.aboutSection {
+#aboutSection {
 	padding: 0;
+	flex-direction: column;
 }
 
-.aboutSection p,
-.aboutSection ul {
+#aboutSection p,
+#aboutSection ul {
 	margin-bottom: 1em;
 }
 
-.aboutSection li {
+#aboutSection li {
 	margin-bottom: 0.5em;
 }
 

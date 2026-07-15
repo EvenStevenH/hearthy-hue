@@ -14,9 +14,7 @@ export default function Randomizer({ ideas }) {
 	};
 
 	return (
-		<section className="container randomizer">
-			<h2>Random Ideas</h2>
-
+		<>
 			<div>
 				<div className="randomIdea">
 					<p>
@@ -50,6 +48,6 @@ export default function Randomizer({ ideas }) {
 					<FaRandom /> Get a new color harmony!
 				</button>
 			</div>
-		</section>
+		</>
 	);
 }

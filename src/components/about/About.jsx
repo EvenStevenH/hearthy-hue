@@ -4,7 +4,10 @@ import { postImages as images } from "../../data/images";
 export default function About() {
 	return (
 		<main className="about">
-			<section className="container aboutSection">
+			<section
+				className="container"
+				id="aboutSection"
+			>
 				<img
 					id="aboutImg"
 					src={images.art2.url}

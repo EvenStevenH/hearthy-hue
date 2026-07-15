@@ -91,28 +91,28 @@
 }
 
 /* -------------------------------------------------------------------------- */
-.logoLoginLeft {
+#logoLoginLeft {
 	color: var(--light1);
 	text-align: center;
 	flex-direction: column;
 	z-index: 2;
 }
 
-.logoLoginLeft .logoImg {
+#logoLoginLeft .logoImg {
 	width: 180px;
 }
 
-.logoLoginLeft .logoText {
+#logoLoginLeft .logoText {
 	font-size: 2em;
 }
 
-.logoLoginRight {
+#logoLoginRight {
 	display: none;
 	text-align: center;
 	margin-bottom: 1em;
 }
 
-.logoLoginRight .logoImg {
+#logoLoginRight .logoImg {
 	width: 120px;
 }
 
@@ -127,11 +127,17 @@
 		padding: 1em;
 	}
 
-	.logoLoginRight {
+	#logoLoginRight {
 		display: block;
 	}
 
 	.loginTop h1 {
 		font-size: 1.5em;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	#logoLoginRight .logoText {
+		font-size: 1em;
 	}
 }

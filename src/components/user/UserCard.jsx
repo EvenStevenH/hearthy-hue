@@ -4,7 +4,10 @@ import { FaLink } from "react-icons/fa";
 
 export default function UserCard({ user, type = "user" }) {
 	return (
-		<div className={`container card ${type}Card`}>
+		<div
+			className={`container card`}
+			id={`${type}Card`}
+		>
 			<img
 				src={user.profileImg?.url || images.defaultProfileImg.url}
 				alt={`${user.username}'s avatar`}

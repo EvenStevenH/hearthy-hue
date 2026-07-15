@@ -64,7 +64,12 @@
 }
 
 /* -------------------------------------------------------------------------- */
-.randomizer > div {
+#randomizer,
+#feedSection {
+	flex-direction: column;
+}
+
+#randomizer > div {
 	display: flex;
 	flex-direction: column;
 	gap: 1em;

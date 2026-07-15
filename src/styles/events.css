@@ -28,10 +28,10 @@
 
 .eventCard {
 	position: relative;
+	flex-direction: column;
 }
 
 .card {
-	/* aspect-ratio: 8.8 / 10.7; */
 	transition: transform ease 0.4s;
 }
 

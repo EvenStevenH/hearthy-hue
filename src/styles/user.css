@@ -12,8 +12,8 @@
 	margin-bottom: 4em;
 }
 
-.userCard,
-.friendCard {
+#userCard,
+#friendCard {
 	flex-direction: row;
 	gap: 1.5em;
 }
@@ -58,25 +58,25 @@
 	position: unset;
 }
 
-.userCard {
+#userCard {
 	flex-direction: column;
 	padding: 0;
 }
 
-.userCard:hover {
+#userCard:hover {
 	transform: none;
 }
 
-.userCard #userImg {
+#userCard #userImg {
 	max-height: 800px;
 	border-radius: 0.5em 0.5em 0 0;
 }
 
-.userCard .userDetails {
+#userCard .userDetails {
 	padding: 0 2em 2em;
 }
 
-.userCard .title {
+#userCard .title {
 	font-size: 2em;
 }
 
@@ -86,17 +86,17 @@
 	/* overflow: hidden; */
 }
 
-.friendCard {
+#friendCard {
 	align-items: center;
 }
 
-.friendCard #userImg {
+#friendCard #userImg {
 	max-width: 200px;
 	border-radius: 50%;
 	transition: transform ease 0.4s;
 }
 
-.friendCard #userImg:hover {
+#friendCard #userImg:hover {
 	transform: rotate(4deg);
 }
 
@@ -122,12 +122,12 @@
 }
 
 @media screen and (max-width: 600px) {
-	.userCard,
-	.friendCard {
+	#userCard,
+	#friendCard {
 		flex-direction: column;
 	}
 
-	.friendCard #userImg {
+	#friendCard #userImg {
 		max-width: unset;
 	}
 }
