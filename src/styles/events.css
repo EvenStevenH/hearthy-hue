@@ -1,11 +1,8 @@
-.grid {
+.gridEvents {
 	display: grid;
 	gap: 1em;
 	grid-template-columns: repeat(3, 1fr);
 	grid-auto-flow: dense;
-}
-
-.gridEvents {
 	margin-bottom: 6em;
 }
 
@@ -18,17 +15,24 @@
 }
 
 .gridDashboard {
+	display: grid;
+	gap: 1em;
+	grid-template-columns: repeat(3, 1fr);
+	grid-auto-flow: dense;
 	margin-bottom: 2em;
 }
 
-.gridDashboard > .card > img {
+.gridDashboard #eventImg {
 	aspect-ratio: 16 / 9;
 }
 
-.card {
-	/* aspect-ratio: 8.8 / 10.7; */
-	transition: transform ease 0.4s;
+.eventCard {
 	position: relative;
+	flex-direction: column;
+}
+
+.card {
+	transition: transform ease 0.4s;
 }
 
 .card:hover {
@@ -61,7 +65,7 @@
 	font-size: 0.8em;
 	letter-spacing: 2px;
 	padding: 0.2em 0.8em;
-	background: var(--light2);
+	background: var(--light3);
 	color: var(--dark2);
 }
 
@@ -97,7 +101,7 @@
 
 #eventDetailsBtn,
 #backBtn {
-	background: var(--light3);
+	background: var(--light4);
 	color: var(--dark1);
 	text-decoration: none;
 }
@@ -146,16 +150,23 @@
 		margin: 0;
 	}
 
-	.grid {
+	.gridEvents,
+	.gridDashboard {
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		margin-bottom: 2em;
 	}
 
-	.grid > :nth-child(3n + 2) {
+	.gridEvents > :nth-child(3n + 2) {
 		top: 0;
 	}
 
-	.grid > :nth-child(3n + 3) {
+	.gridEvents > :nth-child(3n + 3) {
 		top: 0;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.cardBtns {
+		flex-direction: column;
 	}
 }

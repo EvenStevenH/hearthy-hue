@@ -43,7 +43,7 @@ export default function Login({ setIsLoggedIn }) {
 		<main className="loginPage">
 			<div className="leftPane">
 				<Logo
-					className="logoLoginLeft"
+					id="logoLoginLeft"
 					color="light"
 				/>
 				<img
@@ -55,7 +55,7 @@ export default function Login({ setIsLoggedIn }) {
 			<div className="rightPane">
 				<section className="loginPanel">
 					<Logo
-						className="logoLoginRight"
+						id="logoLoginRight"
 						color="dark"
 					/>
 

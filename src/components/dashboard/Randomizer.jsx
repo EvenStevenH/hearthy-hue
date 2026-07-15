@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { getRandomIdea, getRandomHSL } from "../../utils/ideaUtils";
+import { FaRandom } from "react-icons/fa";
 
 export default function Randomizer({ ideas }) {
 	const [idea, setIdea] = useState(getRandomIdea(ideas.subjects)); // random idea on load
@@ -13,9 +14,7 @@ export default function Randomizer({ ideas }) {
 	};
 
 	return (
-		<section className="container randomizer">
-			<h2>Random Ideas</h2>
-
+		<>
 			<div>
 				<div className="randomIdea">
 					<p>
@@ -25,7 +24,9 @@ export default function Randomizer({ ideas }) {
 						<b>Subject</b>: {idea.subject}
 					</p>
 				</div>
-				<button onClick={getIdea}>Get a new subject!</button>
+				<button onClick={getIdea}>
+					<FaRandom /> Get a new subject!
+				</button>
 			</div>
 
 			<hr />
@@ -43,8 +44,10 @@ export default function Randomizer({ ideas }) {
 						></li>
 					))}
 				</ul>
-				<button onClick={getHarmony}>Get a new color harmony!</button>
+				<button onClick={getHarmony}>
+					<FaRandom /> Get a new color harmony!
+				</button>
 			</div>
-		</section>
+		</>
 	);
 }

@@ -27,13 +27,16 @@ export default function PostCard({ post }) {
 						{post.likes} Likes | {post.comments.length} Comments
 					</summary>
 					{post.comments.length ? (
-						post.comments.map((comment, id) => (
+						post.comments.map((comment, timestamp) => (
 							<div
-								key={id}
+								key={timestamp}
 								className="comment"
 							>
 								<p>
 									<strong>{comment.userName}</strong>: {comment.text}
+								</p>
+								<p>
+									{formatDate(post.timestamp, "short", "short")} | {formatTime(comment.timestamp)}
 								</p>
 							</div>
 						))

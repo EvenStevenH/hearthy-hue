@@ -1,13 +1,14 @@
 import { formatDate, formatTimeRange } from "../../utils/eventUtils.js";
 import { useEvents } from "../../utils/EventsContext.jsx";
 import { Link } from "react-router";
+import { FaBookmark, FaNewspaper } from "react-icons/fa6";
 
 export default function EventCard({ event }) {
 	const { addEvent, removeEvent, isEvent } = useEvents();
 	const isSavedEvent = isEvent(event.id);
 
 	return (
-		<div className="container card">
+		<div className="container card eventCard">
 			<img
 				src={event.img.url}
 				alt={event.img.alt}
@@ -43,7 +44,7 @@ export default function EventCard({ event }) {
 					onClick={() => (isSavedEvent ? removeEvent(event.id) : addEvent(event.id))}
 					className={isSavedEvent ? "saved" : ""}
 				>
-					{isSavedEvent ? "Unsave" : "I'm Interested!"}
+					<FaBookmark /> {isSavedEvent ? "Unsave" : "I'm Interested!"}
 				</button>
 
 				<Link
@@ -51,7 +52,7 @@ export default function EventCard({ event }) {
 					id="eventDetailsBtn"
 					className="button"
 				>
-					Details
+					<FaNewspaper /> Details
 				</Link>
 			</div>
 		</div>

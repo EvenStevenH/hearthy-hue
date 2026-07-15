@@ -63,8 +63,19 @@
 	overflow: auto;
 }
 
+.comment {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
 /* -------------------------------------------------------------------------- */
-.randomizer > div {
+#randomizer,
+#feedSection {
+	flex-direction: column;
+}
+
+#randomizer > div {
 	display: flex;
 	flex-direction: column;
 	gap: 1em;
@@ -85,7 +96,7 @@
 	border-radius: 0.5em;
 	overflow: hidden;
 	width: 100%;
-	border: solid 1px var(--light2);
+	border: solid 1px var(--light3);
 }
 
 .colorSwatch {

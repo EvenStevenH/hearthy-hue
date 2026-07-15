@@ -1,5 +1,9 @@
 import Logo from "./Logo";
 import { NavLink, useNavigate } from "react-router";
+import { GoHomeFill } from "react-icons/go";
+import { FaRegCalendarAlt, FaInfoCircle } from "react-icons/fa";
+import { CgProfile } from "react-icons/cg";
+import { MdOutlineTransitEnterexit } from "react-icons/md";
 
 export default function Header({ menuOpen, setMenuOpen, setIsLoggedIn }) {
 	const navigate = useNavigate();
@@ -24,21 +28,27 @@ export default function Header({ menuOpen, setMenuOpen, setIsLoggedIn }) {
 			</header>
 
 			<nav className={menuOpen ? "open" : ""}>
-				<NavLink to="/dashboard">Dashboard</NavLink>
-				<NavLink to="/events">Events</NavLink>
-				<NavLink to="/user">Your Profile</NavLink>
+				<NavLink to="/dashboard">
+					<GoHomeFill className="navIcon" /> Dashboard
+				</NavLink>
+				<NavLink to="/events">
+					<FaRegCalendarAlt className="navIcon" /> Events
+				</NavLink>
+				<NavLink to="/user">
+					<CgProfile className="navIcon" /> Your Profile
+				</NavLink>
 
 				<NavLink
 					className="navBottom"
 					to="/about"
 				>
-					About
+					<FaInfoCircle className="navIcon" /> About
 				</NavLink>
 				<NavLink
 					to="/login"
 					onClick={handleLogout}
 				>
-					Log Out
+					<MdOutlineTransitEnterexit className="navIcon" /> Log Out
 				</NavLink>
 			</nav>
 		</>

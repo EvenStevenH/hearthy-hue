@@ -28,7 +28,10 @@ export default function Dashboard({ eventsData }) {
 			<h1>Dashboard</h1>
 
 			<section className="dashboardSection">
-				<section className="container">
+				<section
+					className="container"
+					id="feedSection"
+				>
 					<h2>Feed</h2>
 
 					{feedData.data.feed.length ? (
@@ -47,14 +50,20 @@ export default function Dashboard({ eventsData }) {
 					)}
 				</section>
 
-				<Randomizer ideas={ideasData.data} />
+				<section
+					className="container"
+					id="randomizer"
+				>
+					<h2>Random Ideas</h2>
+					<Randomizer ideas={ideasData.data} />
+				</section>
 			</section>
 
 			<section className="savedEvents">
 				<h2>Your Events</h2>
 
 				{savedEvents.length ? (
-					<div className="grid gridDashboard">
+					<div className="gridDashboard">
 						{eventsData.data.events
 							.filter((event) => savedEvents.includes(event.id))
 							.sort((a, b) => sortByStartDate(a, b, "startDate"))

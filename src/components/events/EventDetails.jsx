@@ -3,6 +3,8 @@ import { useEvents } from "../../utils/EventsContext.jsx";
 import { formatDate, formatTimeRange, formatPrice } from "../../utils/eventUtils.js";
 import Loader from "../Loader.jsx";
 import ErrorMessage from "../ErrorMessage.jsx";
+import { FaBookmark } from "react-icons/fa6";
+import { IoIosArrowBack } from "react-icons/io";
 
 export default function EventDetails({ eventsData }) {
 	const { eventId } = useParams();
@@ -65,7 +67,7 @@ export default function EventDetails({ eventsData }) {
 						onClick={() => (isSavedEvent ? removeEvent(event.id) : addEvent(event.id))}
 						className={isSavedEvent ? "saved" : ""}
 					>
-						{isSavedEvent ? "Unsave" : "I'm Interested!"}
+						<FaBookmark /> {isSavedEvent ? "Unsave" : "I'm Interested!"}
 					</button>
 
 					<button
@@ -73,7 +75,7 @@ export default function EventDetails({ eventsData }) {
 						className="button"
 						onClick={handleBack}
 					>
-						Back
+						<IoIosArrowBack /> Back
 					</button>
 				</div>
 			</section>
