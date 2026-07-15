@@ -4,6 +4,8 @@ export default function ContactForm() {
 	const [formData, setFormData] = useState({
 		name: "",
 		email: "",
+		reasonForContact: "",
+		subject: "",
 		message: "",
 	});
 	const [formMsg, setFormMsg] = useState("");
@@ -22,6 +24,8 @@ export default function ContactForm() {
 			setFormData({
 				name: "",
 				email: "",
+				reasonForContact: "",
+				subject: "",
 				message: "",
 			});
 			setFormMsg('Thanks for your "message", traveler!');
@@ -61,6 +65,36 @@ export default function ContactForm() {
 						required
 					/>
 				</div>
+			</div>
+
+			<div>
+				<label htmlFor="reasonForContact">Reason for Contact:</label>
+				<select
+					id="reasonForContact"
+					name="reasonForContact"
+					value={formData.reasonForContact}
+					onChange={handleChange}
+					required
+				>
+					<option value="">Select a Reason</option>
+					<option value="inquiry">Inquiries</option>
+					<option value="bug-report">Bug Report</option>
+					<option value="support-request">Support Request</option>
+					<option value="other">Other</option>
+				</select>
+			</div>
+
+			<div>
+				<label htmlFor="subject">Subject:</label>
+				<input
+					type="text"
+					id="subject"
+					name="subject"
+					value={formData.subject}
+					onChange={handleChange}
+					placeholder="Enter subject here..."
+					required
+				/>
 			</div>
 
 			<div className="messageField">
