@@ -15,11 +15,13 @@ export default function UserCard({ user, type = "user" }) {
 			/>
 
 			<div className="userDetails">
-				<div className="userHeader">
+				<div>
 					<h4 className="title">{user.username}</h4>
+
 					<p className="subtitle">
 						<span id="tagline">{user.tagline}</span>
 					</p>
+
 					<div className="userFollowStats">
 						<p>
 							<b>Followers</b>: {user.followers}
@@ -31,9 +33,9 @@ export default function UserCard({ user, type = "user" }) {
 							<b>Posts</b>: {user.postCount}
 						</p>
 					</div>
-				</div>
 
-				<p className="bio">{user.bio}</p>
+					<p className="bio">{user.bio}</p>
+				</div>
 
 				<div className="cardBtns">
 					<button>
