@@ -5,9 +5,8 @@
 	gap: 1em;
 }
 
-.contactSection {
-	display: flex;
-	flex-direction: column;
+.aboutSection {
+	padding: 0;
 }
 
 .aboutSection p,
@@ -17,6 +16,25 @@
 
 .aboutSection li {
 	margin-bottom: 0.5em;
+}
+
+.aboutContent {
+	padding: 2em;
+}
+
+#aboutImg {
+	width: 100%;
+	height: 200px;
+	display: block;
+	object-fit: cover;
+	border-radius: 0.5em 0.5em 0 0;
+	filter: brightness(0.8) sepia(40%) contrast(80%);
+}
+
+/* -------------------------------------------------------------------------- */
+.contactSection {
+	display: flex;
+	flex-direction: column;
 }
 
 .contactForm {

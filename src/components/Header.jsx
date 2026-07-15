@@ -27,10 +27,15 @@ export default function Header({ menuOpen, setMenuOpen, setIsLoggedIn }) {
 				<NavLink to="/dashboard">Dashboard</NavLink>
 				<NavLink to="/events">Events</NavLink>
 				<NavLink to="/user">Your Profile</NavLink>
-				<NavLink to="/about">About</NavLink>
+
+				<NavLink
+					className="navBottom"
+					to="/about"
+				>
+					About
+				</NavLink>
 				<NavLink
 					to="/login"
-					className="logoutLink"
 					onClick={handleLogout}
 				>
 					Log Out

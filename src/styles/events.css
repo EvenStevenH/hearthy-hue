@@ -35,7 +35,7 @@
 	transform: rotate(0.5deg) scale(1.02) translateY(-2px);
 }
 
-.eventImg {
+#eventImg {
 	width: 100%;
 	display: block;
 	object-fit: cover;

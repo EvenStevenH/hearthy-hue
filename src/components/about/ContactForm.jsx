@@ -12,7 +12,7 @@ export default function ContactForm() {
 	function handleChange(e) {
 		const { name, value } = e.target;
 		setFormData((prev) => ({ ...prev, [name]: value }));
-		setFormMsg("This is a mock form, so submissions won't go anywhere!");
+		setFormMsg("This is a mock form. Submissions won't go anywhere!");
 	}
 
 	function handleForm(event) {

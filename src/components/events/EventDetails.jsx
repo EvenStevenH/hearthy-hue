@@ -26,7 +26,7 @@ export default function EventDetails({ eventsData }) {
 			<img
 				src={event.img.url}
 				alt={event.img.alt}
-				className="eventImg"
+				id="eventImg"
 			/>
 
 			<section className="cardDetails">
