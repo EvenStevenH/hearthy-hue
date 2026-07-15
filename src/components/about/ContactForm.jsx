@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { IoSend } from "react-icons/io5";
 
 export default function ContactForm() {
 	const [formData, setFormData] = useState({
@@ -121,7 +122,7 @@ export default function ContactForm() {
 				id="submitBtn"
 				type="submit"
 			>
-				Submit
+				<IoSend /> Submit
 			</button>
 
 			{formMsg && <p id="formMsg">{formMsg}</p>}
