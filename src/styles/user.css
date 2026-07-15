@@ -1,46 +1,109 @@
-.gridFriends {
+.userPage {
 	display: grid;
+	grid-template-columns: 2fr 2fr;
+	gap: 2em;
+	margin-bottom: 2em;
+}
+
+.friends {
+	display: flex;
+	flex-direction: column;
 	gap: 1em;
-	grid-template-columns: repeat(2, 1fr);
-	grid-auto-flow: dense;
 	margin-bottom: 4em;
 }
 
-.userInfo {
-	margin-bottom: 2em;
-	position: unset;
-}
-
-.userInfo > .userCard:hover {
-	transform: none;
-}
-
-.userCard {
+.userCard,
+.friendCard {
 	flex-direction: row;
-	gap: 1em;
+	gap: 1.5em;
 }
 
-#userImg,
-#userBg {
+#userImg {
 	height: 100%;
-	max-height: 200px;
+	width: 100%;
 	display: block;
 	object-fit: cover;
 	aspect-ratio: 1 / 1;
 	filter: sepia(40%) contrast(80%);
+	border-radius: 0.5em;
 }
 
-#userImg {
-	border-radius: 50%;
+.userDetails {
+	flex-grow: 1;
 }
 
-#userBg {
+.userHeader {
+	margin-bottom: 0.5em;
+}
+
+.subtitle {
+	font-size: 0.9em;
+	color: var(--dark2);
+}
+
+.userFollowStats {
+	font-size: 0.9em;
+	display: flex;
+	column-gap: 1em;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
+
+.bio {
+	margin-bottom: 1em;
+}
+
+/* -------------------------------------------------------------------------- */
+.userInfo {
+	position: unset;
+}
+
+.userCard {
+	flex-direction: column;
+	padding: 0;
+}
+
+.userCard:hover {
+	transform: none;
+}
+
+.userCard #userImg {
+	max-height: 800px;
 	border-radius: 0.5em 0.5em 0 0;
+}
+
+.userCard .userDetails {
+	padding: 0 2em 2em;
+}
+
+.userCard .title {
+	font-size: 2em;
+}
+
+/* -------------------------------------------------------------------------- */
+.userFriends {
+	height: 100%;
+	/* overflow: hidden; */
+}
+
+.friendCard {
+	align-items: center;
+}
+
+.friendCard #userImg {
+	max-width: 200px;
+	border-radius: 50%;
+	transition: transform ease 0.4s;
+}
+
+.friendCard #userImg:hover {
+	transform: rotate(4deg);
 }
 
 /* -------------------------------------------------------------------------- */
 @media screen and (max-width: 1200px) {
-	.userCard {
+	.userPage {
+		display: flex;
 		flex-direction: column;
 	}
 
@@ -55,5 +118,16 @@
 
 	.gridFriends > :nth-child(3n + 3) {
 		top: 0;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.userCard,
+	.friendCard {
+		flex-direction: column;
+	}
+
+	.friendCard #userImg {
+		max-width: unset;
 	}
 }

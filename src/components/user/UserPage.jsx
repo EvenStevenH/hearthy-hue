@@ -10,27 +10,33 @@ export default function UserPage() {
 
 	return (
 		<main>
-			<h1>Your Profile</h1>
+			<h1>{data.user.username}'s Profile</h1>
 
-			<section className="userInfo">
-				<UserCard user={data.user} />
-			</section>
+			<section className="userPage">
+				<section className="userInfo">
+					<UserCard
+						user={data.user}
+						type="user"
+					/>
+				</section>
 
-			<section className="userFriends">
-				<h2>Your Friends</h2>
+				<section className="userFriends">
+					<h2>Your Friends</h2>
 
-				{data.friends.length ? (
-					<section className="grid gridFriends gridEvents">
-						{data.friends.map((friend) => (
-							<UserCard
-								user={friend}
-								key={friend.userId}
-							/>
-						))}
-					</section>
-				) : (
-					<p className="emptyMsg">No friends available.</p>
-				)}
+					{data.friends.length ? (
+						<section className="friends">
+							{data.friends.map((friend) => (
+								<UserCard
+									user={friend}
+									type="friend"
+									key={friend.userId}
+								/>
+							))}
+						</section>
+					) : (
+						<p className="emptyMsg">No friends available.</p>
+					)}
+				</section>
 			</section>
 		</main>
 	);

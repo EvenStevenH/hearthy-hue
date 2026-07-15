@@ -150,7 +150,8 @@
 		margin: 0;
 	}
 
-	.gridEvents {
+	.gridEvents,
+	.gridDashboard {
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		margin-bottom: 2em;
 	}

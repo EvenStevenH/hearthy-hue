@@ -1,30 +1,47 @@
-export default function UserCard({ user }) {
+import { userImages as images } from "../../data/images";
+import { MdMessage } from "react-icons/md";
+import { FaLink } from "react-icons/fa";
+
+export default function UserCard({ user, type = "user" }) {
 	return (
-		<div className="container card userCard">
+		<div className={`container card ${type}Card`}>
 			<img
-				src={user.profileImg.url || "/default-avatar.png"}
+				src={user.profileImg?.url || images.defaultProfileImg.url}
 				alt={`${user.username}'s avatar`}
 				id="userImg"
 			/>
 
-			<div className="cardDetails">
-				<h3 className="title">{user.username}</h3>
-				<p className="tagline">{user.tagline}</p>
-
-				<div>
-					<p className="followers">
-						<b>Followers</b>: {user.followers}
+			<div className="userDetails">
+				<div className="userHeader">
+					<h4 className="title">{user.username}</h4>
+					<p className="subtitle">
+						<span id="tagline">{user.tagline}</span>
 					</p>
-					<p className="following">
-						<b>Following</b>: {user.following}
-					</p>
+					<div className="userFollowStats">
+						<p>
+							<b>Followers</b>: {user.followers}
+						</p>
+						<p>
+							<b>Following</b>: {user.following}
+						</p>
+						<p>
+							<b>Posts</b>: {user.postCount}
+						</p>
+					</div>
 				</div>
 
-				<p className="availability">
-					<b>Availability</b>: {user.availability}
-				</p>
-
 				<p className="bio">{user.bio}</p>
+
+				<div className="cardBtns">
+					<button>
+						<FaLink /> Website
+					</button>
+					{type === "friend" && (
+						<button>
+							<MdMessage /> Message
+						</button>
+					)}
+				</div>
 			</div>
 		</div>
 	);
