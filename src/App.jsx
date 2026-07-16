@@ -8,10 +8,9 @@ import EventsPage from "./components/events/EventsPage.jsx";
 import EventDetails from "./components/events/EventDetails.jsx";
 import { EventsProvider } from "./utils/EventsContext.jsx";
 import { Routes, Route, Navigate } from "react-router";
-import { useLocalStorage } from "./utils/hooks";
+import { useLocalStorage, useFetch } from "./utils/hooks";
 import { useState } from "react";
 import { events as eventsData } from "./data/events.js";
-import { useFetch } from "./utils/hooks";
 
 export default function App() {
 	const [isLoggedIn, setIsLoggedIn] = useLocalStorage("isLoggedIn", false);
