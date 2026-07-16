@@ -362,6 +362,10 @@ select {
 		width: 100%;
 	}
 
+	ul {
+		padding-inline-start: 1em;
+	}
+
 	#menu-toggle {
 		display: block;
 	}
