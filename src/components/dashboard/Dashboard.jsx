@@ -7,19 +7,21 @@ import { useEvents } from "../../utils/EventsContext";
 import { Link } from "react-router";
 import { useFetch } from "../../utils/hooks";
 import { sortByStartDate } from "../../utils/eventUtils";
+import { subjects as ideasData } from "../../data/ideas.js";
+import { feed as feedData } from "../../data/feed.js";
 
-export default function Dashboard({ eventsData }) {
+export default function Dashboard({ events }) {
 	const { savedEvents, removeEvent } = useEvents();
-	const ideasData = useFetch("./../data/ideas.js");
-	const feedData = useFetch("./../data/feed.js");
+	const subjects = useFetch(ideasData);
+	const feed = useFetch(feedData);
 
-	if (eventsData.loading || ideasData.loading || feedData.loading) return <Loader />;
-	if (eventsData.error || ideasData.error || feedData.error)
+	if (events.loading || subjects.loading || feed.loading) return <Loader />;
+	if (events.error || subjects.error || feed.error)
 		return (
 			<>
-				<ErrorMessage message={eventsData.error} />
-				<ErrorMessage message={ideasData.error} />
-				<ErrorMessage message={feedData.error} />
+				<ErrorMessage message={events.error} />
+				<ErrorMessage message={subjects.error} />
+				<ErrorMessage message={feed.error} />
 			</>
 		);
 
@@ -34,9 +36,9 @@ export default function Dashboard({ eventsData }) {
 				>
 					<h2>Feed</h2>
 
-					{feedData.data.feed.length ? (
+					{feed.data.length ? (
 						<div className="postFeed">
-							{feedData.data.feed
+							{feed.data
 								.sort((a, b) => sortByStartDate(a, b, "timestamp"))
 								.map((post) => (
 									<PostCard
@@ -55,7 +57,7 @@ export default function Dashboard({ eventsData }) {
 					id="randomizer"
 				>
 					<h2>Random Ideas</h2>
-					<Randomizer ideas={ideasData.data} />
+					<Randomizer subjects={subjects.data} />
 				</section>
 			</section>
 
@@ -64,7 +66,7 @@ export default function Dashboard({ eventsData }) {
 
 				{savedEvents.length ? (
 					<div className="gridDashboard">
-						{eventsData.data.events
+						{events.data
 							.filter((event) => savedEvents.includes(event.id))
 							.sort((a, b) => sortByStartDate(a, b, "startDate"))
 							.map((event) => (

@@ -1,5 +1,6 @@
 import { useNavigate, Link } from "react-router";
 import { useState } from "react";
+import { eventImages } from "./../data/images";
 import Logo from "./Logo";
 
 export default function Login({ setIsLoggedIn }) {
@@ -47,8 +48,9 @@ export default function Login({ setIsLoggedIn }) {
 					color="light"
 				/>
 				<img
-					src="/src/assets/img/studio.jpg"
 					className="loginBg"
+					src={eventImages.studio.url}
+					alt={eventImages.studio.alt}
 				/>
 			</div>
 

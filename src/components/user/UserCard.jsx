@@ -38,9 +38,14 @@ export default function UserCard({ user, type = "user" }) {
 				</div>
 
 				<div className="cardBtns">
-					<button>
+					<a
+						href={user.website}
+						target="_blank"
+						className="button"
+					>
 						<FaLink /> Website
-					</button>
+					</a>
+
 					{type === "friend" && (
 						<button>
 							<MdMessage /> Message

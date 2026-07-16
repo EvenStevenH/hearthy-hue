@@ -6,7 +6,7 @@ export const user = {
 	tagline: "Illustrator",
 	profileImg: images.origami,
 	bgImg: null,
-	website: null,
+	website: "https://github.com/EvenStevenH",
 	followers: 8240,
 	following: 56,
 	postCount: 208,

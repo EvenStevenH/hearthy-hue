@@ -14,7 +14,9 @@ export function useFetch(url) {
 				setError(null); // clear any previous errors
 
 				let data;
-				if (url.endsWith(".js")) {
+				if (typeof url === "object") {
+					data = url; // object from local file
+				} else if (url.endsWith(".js")) {
 					data = await import(/* @vite-ignore */ url);
 				} else {
 					const response = await fetch(url);

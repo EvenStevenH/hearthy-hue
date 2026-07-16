@@ -8,13 +8,15 @@ import EventsPage from "./components/events/EventsPage.jsx";
 import EventDetails from "./components/events/EventDetails.jsx";
 import { EventsProvider } from "./utils/EventsContext.jsx";
 import { Routes, Route, Navigate } from "react-router";
-import { useFetch, useLocalStorage } from "./utils/hooks";
+import { useLocalStorage } from "./utils/hooks";
 import { useState } from "react";
+import { events as eventsData } from "./data/events.js";
+import { useFetch } from "./utils/hooks";
 
 export default function App() {
 	const [isLoggedIn, setIsLoggedIn] = useLocalStorage("isLoggedIn", false);
 	const [menuOpen, setMenuOpen] = useState(false);
-	const eventsData = useFetch("./../data/events.js");
+	const events = useFetch(eventsData);
 
 	return (
 		<>
@@ -31,15 +33,15 @@ export default function App() {
 							<Routes>
 								<Route
 									path="/dashboard"
-									element={<Dashboard eventsData={eventsData} />}
+									element={<Dashboard events={events} />}
 								/>
 								<Route
 									path="/events"
-									element={<EventsPage eventsData={eventsData} />}
+									element={<EventsPage events={events} />}
 								/>
 								<Route
 									path="/events/:eventId"
-									element={<EventDetails eventsData={eventsData} />}
+									element={<EventDetails events={events} />}
 								/>
 								<Route
 									path="/user"

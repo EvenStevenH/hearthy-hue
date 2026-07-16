@@ -6,10 +6,10 @@ import ErrorMessage from "../ErrorMessage.jsx";
 import { FaBookmark } from "react-icons/fa6";
 import { IoIosArrowBack } from "react-icons/io";
 
-export default function EventDetails({ eventsData }) {
+export default function EventDetails({ events }) {
 	const { eventId } = useParams();
 	const { addEvent, removeEvent, isEvent } = useEvents();
-	const { data, loading, error } = eventsData;
+	const { data, loading, error } = events;
 	const navigate = useNavigate();
 
 	if (loading) return <Loader />;
@@ -19,7 +19,7 @@ export default function EventDetails({ eventsData }) {
 		window.history.length > 1 ? navigate(-1) : navigate("/events");
 	}
 
-	const event = data.events.find((event) => String(event.id) === eventId);
+	const event = data.find((event) => String(event.id) === eventId);
 	if (!event) return navigate("/events");
 	const isSavedEvent = isEvent(event.id);
 
