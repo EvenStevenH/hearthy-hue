@@ -52,6 +52,7 @@
 	column-gap: 1em;
 	justify-content: flex-start;
 	flex-wrap: wrap;
+	margin-bottom: 0.4em;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -86,14 +87,11 @@
 	height: 100%;
 }
 
-/* #friendCard {
-	align-items: center;
-} */
-
 #friendCard #userImg {
 	max-width: 200px;
 	border-radius: 50%;
 	transition: transform ease 0.4s;
+	margin: auto 0;
 }
 
 #friendCard #userImg:hover {

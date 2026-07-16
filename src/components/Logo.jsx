@@ -1,3 +1,6 @@
+import icon_dark from "../assets/icons/icon_dark.svg";
+import icon_light from "../assets/icons/icon_light.svg";
+
 export default function Logo({ id, color }) {
 	return (
 		<div
@@ -5,7 +8,7 @@ export default function Logo({ id, color }) {
 			id={`${id}`}
 		>
 			<img
-				src={`/src/assets/icons/icon_${color}.svg`}
+				src={color === "dark" ? icon_dark : icon_light}
 				alt="logo"
 				className="logoImg"
 			/>

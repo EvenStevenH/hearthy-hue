@@ -1,5 +1,5 @@
 import ContactForm from "./ContactForm";
-import { postImages as images } from "../../data/images";
+import { postImages } from "../../data/images";
 
 export default function About() {
 	return (
@@ -10,8 +10,8 @@ export default function About() {
 			>
 				<img
 					id="aboutImg"
-					src={images.art2.url}
-					alt={images.art2.alt}
+					src={postImages.art2.url}
+					alt={postImages.art2.alt}
 				/>
 
 				<div className="aboutContent">
@@ -31,8 +31,8 @@ export default function About() {
 					<ul>
 						<li>A few features of this demo app include:</li>
 						<ul>
-							<li>An event Page to view and save of events, with event details in a separate view</li>
-							<li>A dashboard with a mock social media feed, your saved events, and a simple tool to roll random subjects and color harmonies</li>
+							<li>An event page to view and save events, with event details in a separate view</li>
+							<li>A dashboard with a mock social media feed, your saved events, and a simple tool to roll random drawing subjects and color harmonies</li>
 							<li>A profile page to view information about you and your friends</li>
 						</ul>
 

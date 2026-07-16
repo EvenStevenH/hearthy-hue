@@ -2,20 +2,28 @@ import ErrorMessage from "../ErrorMessage";
 import Loader from "../Loader";
 import { useFetch } from "../../utils/hooks";
 import UserCard from "./UserCard";
+import { user as userData, friends as friendsData } from "../../data/user.js";
 
 export default function UserPage() {
-	const { data, loading, error } = useFetch("./../data/user.js");
-	if (loading) return <Loader />;
-	if (error) return <ErrorMessage message={error} />;
+	const user = useFetch(userData);
+	const friends = useFetch(friendsData);
+	if (user.loading || friends.loading) return <Loader />;
+	if (user.error || friends.error)
+		return (
+			<>
+				<ErrorMessage message={user.error} />;
+				<ErrorMessage message={friends.error} />;
+			</>
+		);
 
 	return (
 		<main>
-			<h1>{data.user.username}'s Profile</h1>
+			<h1>{user.data.username}'s Profile</h1>
 
 			<section className="userPage">
 				<section className="userInfo">
 					<UserCard
-						user={data.user}
+						user={user.data}
 						type="user"
 					/>
 				</section>
@@ -23,9 +31,9 @@ export default function UserPage() {
 				<section className="userFriends">
 					<h2>Your Friends</h2>
 
-					{data.friends.length ? (
+					{friends.data.length ? (
 						<section className="friends">
-							{data.friends.map((friend) => (
+							{friends.data.map((friend) => (
 								<UserCard
 									user={friend}
 									type="friend"
