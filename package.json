@@ -1,5 +1,6 @@
 {
 	"name": "hearthy-hue",
+	"homepage": "https://evenstevenh.github.io/hearthy-hue/",
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
@@ -8,9 +9,12 @@
 		"build": "vite build",
 		"lint": "eslint .",
 		"preview": "vite preview",
-		"test": "test"
+		"test": "test",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d dist"
 	},
 	"dependencies": {
+		"gh-pages": "^6.3.0",
 		"react": "^19.2.7",
 		"react-dom": "^19.2.7",
 		"react-icons": "^5.7.0",
