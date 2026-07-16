@@ -7,6 +7,13 @@ import studio from "../assets/img/studio.jpg";
 import market from "../assets/img/market.jpg";
 import bar from "../assets/img/bar.jpg";
 import band from "../assets/img/band.jpg";
+import art1 from "../assets/img/art1.jpg";
+import art2 from "../assets/img/art2.jpg";
+import painting1 from "../assets/img/painting1.jpg";
+import animal1 from "../assets/img/animal1.jpg";
+import animal2 from "../assets/img/animal2.jpg";
+import animal3 from "../assets/img/animal3.jpg";
+import origami from "../assets/img/origami.jpg";
 
 export const eventImages = {
 	coffee: { url: coffee, alt: "food and coffee" },
@@ -19,14 +26,6 @@ export const eventImages = {
 	nightlife: { url: bar, alt: "bar" },
 	band: { url: band, alt: "band performing on stage" },
 };
-
-import art1 from "../assets/img/art1.jpg";
-import art2 from "../assets/img/art2.jpg";
-import painting1 from "../assets/img/painting1.jpg";
-import animal1 from "../assets/img/animal1.jpg";
-import animal2 from "../assets/img/animal2.jpg";
-import animal3 from "../assets/img/animal3.jpg";
-import origami from "../assets/img/origami.jpg";
 
 export const postImages = {
 	art1: { url: art1, alt: "illustration of a fox" },
